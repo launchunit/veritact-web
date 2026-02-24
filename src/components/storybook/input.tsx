@@ -1,6 +1,6 @@
 import type React from 'react';
 
-export interface InputProps {
+export type InputProps = {
   label: string;
   id: string;
   value?: string;
@@ -8,7 +8,7 @@ export interface InputProps {
   placeholder?: string;
   required?: boolean;
   className?: string;
-}
+};
 
 export const Input: React.FC<InputProps> = ({
   label,

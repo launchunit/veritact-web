@@ -1,11 +1,11 @@
 import type React from 'react';
 
-export interface DialogProps {
+export type DialogProps = {
   title: string;
   children: React.ReactNode;
   footer?: React.ReactNode;
   className?: string;
-}
+};
 
 export const Dialog: React.FC<DialogProps> = ({ title, children, footer, className = '' }) => {
   return (

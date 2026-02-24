@@ -55,22 +55,22 @@ export const Form: Story = {
     title: 'Create Account',
     children: (
       <div className="space-y-4 min-w-80">
-        <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-200">Email</label>
+        <label className="flex flex-col gap-2">
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-200">Email</span>
           <input
             type="email"
             placeholder="you@example.com"
             className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-gray-700 dark:text-gray-200">Password</label>
+        </label>
+        <label className="flex flex-col gap-2">
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-200">Password</span>
           <input
             type="password"
             placeholder="••••••••"
             className="px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100"
           />
-        </div>
+        </label>
       </div>
     ),
     footer: (

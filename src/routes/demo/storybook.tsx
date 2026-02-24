@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import { Button } from '@/components/storybook/button';
 import { Dialog } from '@/components/storybook/dialog';
 import { Input } from '@/components/storybook/input';
@@ -15,6 +15,7 @@ function StorybookDemo() {
   const [lastName, setLastName] = useState('');
   const [employmentType, setEmploymentType] = useState('full-time');
   const [coffeeCups, setCoffeeCups] = useState(3);
+  const id = useId();
 
   const handleSubmit = () => {};
 
@@ -26,7 +27,7 @@ function StorybookDemo() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4">
+    <div className="min-h-screen bg-linear-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 py-12 px-4">
       <div className="max-w-2xl mx-auto">
         <Dialog
           title="Employee Information Form"
@@ -43,7 +44,7 @@ function StorybookDemo() {
           <form onSubmit={handleSubmit} className="space-y-6">
             <Input
               label="First Name"
-              id="firstName"
+              id={`${id}-firstName`}
               value={firstName}
               onChange={setFirstName}
               placeholder="John"
@@ -52,7 +53,7 @@ function StorybookDemo() {
 
             <Input
               label="Last Name"
-              id="lastName"
+              id={`${id}-lastName`}
               value={lastName}
               onChange={setLastName}
               placeholder="Doe"
@@ -72,7 +73,7 @@ function StorybookDemo() {
 
             <Slider
               label="Coffee Cups Per Day"
-              id="coffeeCups"
+              id={`${id}-coffeeCups`}
               value={coffeeCups}
               onChange={setCoffeeCups}
               min={0}

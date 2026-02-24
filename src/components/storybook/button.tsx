@@ -1,6 +1,6 @@
 import type React from 'react';
 
-export interface ButtonProps {
+export type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'danger';
   size?: 'small' | 'medium' | 'large';
   children: React.ReactNode;
@@ -8,7 +8,7 @@ export interface ButtonProps {
   disabled?: boolean;
   type?: 'button' | 'submit' | 'reset';
   className?: string;
-}
+};
 
 export const Button: React.FC<ButtonProps> = ({
   variant = 'primary',

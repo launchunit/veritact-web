@@ -1,6 +1,6 @@
 import type React from 'react';
 
-export interface SliderProps {
+export type SliderProps = {
   label: string;
   id: string;
   value?: number;
@@ -10,7 +10,7 @@ export interface SliderProps {
   step?: number;
   showValue?: boolean;
   className?: string;
-}
+};
 
 export const Slider: React.FC<SliderProps> = ({
   label,
