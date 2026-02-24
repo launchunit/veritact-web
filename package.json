@@ -1,0 +1,61 @@
+{
+  "name": "@scoretravel/veritact-demo",
+  "type": "module",
+  "engines": {
+    "node": ">=22.10",
+    "pnpm": "9.15.9"
+  },
+  "imports": {
+    "#/*": "./src/*"
+  },
+  "scripts": {
+    "//": "Skipping husky in CI environments",
+    "prepare": "if [ -z \"$CI\" ]; then husky; fi",
+    "clean": "rimraf -g -v \"**/{node_modules,dist,out,.cache,.vercel,*.tsbuildinfo}\"",
+    "build": "TZ=UTC vite build",
+    "dev": "TZ=UTC vite --clearScreen=false",
+    "test": "vitest --color --run",
+    "test:watch": "vitest --color --clearScreen=false",
+    "format": "prettier --write .",
+    "format:check": "prettier --check . || prettier --list-different .",
+    "lint": "tsc --noEmit && biome lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@storybook/react-vite": "^10.1.10",
+    "@tailwindcss/vite": "^4.1.18",
+    "@tanstack/react-devtools": "^0.7.0",
+    "@tanstack/react-router": "^1.132.0",
+    "@tanstack/react-router-devtools": "^1.132.0",
+    "@tanstack/react-router-ssr-query": "^1.131.7",
+    "@tanstack/react-start": "^1.132.0",
+    "@tanstack/router-plugin": "^1.132.0",
+    "lucide-react": "^0.545.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "storybook": "^10.1.10",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.4",
+    "@scoretravel/prettier-config": "^0.0.18",
+    "@scoretravel/vscode": "^0.1.0",
+    "@tanstack/devtools-vite": "^0.3.11",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.2.0",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.0.4",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "jsdom": "^27.0.0",
+    "husky": "^9.1.6",
+    "rimraf": "^6.1.3",
+    "typescript": "^5.7.2",
+    "vite": "^7.1.7",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.0.5"
+  },
+  "prettier": "@scoretravel/prettier-config"
+}

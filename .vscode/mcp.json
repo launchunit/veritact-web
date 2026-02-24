@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "tanstack": {
+      "command": "pnpm",
+      "args": ["dlx", "@tanstack/cli", "mcp"]
+    },
+    "shadcn": {
+      "command": "pnpm",
+      "args": ["dlx", "shadcn@latest", "mcp"]
+    },
+    "attio-docs": {
+      "type": "http",
+      "url": "https://docs.attio.com/mcp"
+    }
+  },
+  "permissions": {
+    "allow": ["mcp__tanstack__*", "mcp__shadcn__*", "mcp__attio-docs__*"]
+  }
+}
