@@ -23,6 +23,9 @@ importers:
       react-dom:
         specifier: ^19.2.0
         version: 19.2.4(react@19.2.4)
+      tailwind-merge:
+        specifier: ^3.5.0
+        version: 3.5.0
       tailwindcss:
         specifier: ^4.1.18
         version: 4.2.1
@@ -33,6 +36,9 @@ importers:
       '@scoretravel/prettier-config':
         specifier: ^0.0.18
         version: 0.0.18
+      '@scoretravel/tsconfig':
+        specifier: ^0.0.6
+        version: 0.0.6
       '@scoretravel/vscode':
         specifier: ^0.1.0
         version: 0.1.0
@@ -601,6 +607,9 @@ packages:
 
   '@scoretravel/prettier-config@0.0.18':
     resolution: {integrity: sha512-aT1fvIfv9pPtIgio9QHaHD5wXewFnQKc7EBNEV8iu0YO7oq+pQILWWLpZelUFNTgiFhXffGwDoMmkhSSS+Nvag==, tarball: https://npm.pkg.github.com/download/@scoretravel/prettier-config/0.0.18/d98328acfd71cbe932d58a0c9c40aba46c715363}
+
+  '@scoretravel/tsconfig@0.0.6':
+    resolution: {integrity: sha512-yL4NJ1sOu+iHZtqvqb6nZrSyJtQ+njyM+hL41mKp+suSdfeAbm0d9CRnddxjA6+eo2kZ2cVASnyp28wx6lnAfQ==, tarball: https://npm.pkg.github.com/download/@scoretravel/tsconfig/0.0.6/399f98c23b4acfeb58d9bd45c946dbbf49a0d0b8}
 
   '@scoretravel/vscode@0.1.0':
     resolution: {integrity: sha512-zk9PmqwLZ2AuTfYkbZVrUsa2bnrUk7P8YeIC/O3NsGSD35w3wcAy4wECMQLZtZiN+QdhJS9O90cFaZY/96Q5iA==, tarball: https://npm.pkg.github.com/download/@scoretravel/vscode/0.1.0/0cd8c1e61d77f97091aa95b9aa741177a11f6da8}
@@ -1785,6 +1794,9 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  tailwind-merge@3.5.0:
+    resolution: {integrity: sha512-I8K9wewnVDkL1NTGoqWmVEIlUcB9gFriAEkXkfCjX5ib8ezGxtR3xD7iZIxrfArjEsH7F1CHD4RFUtxefdqV/A==}
+
   tailwindcss@4.2.1:
     resolution: {integrity: sha512-/tBrSQ36vCleJkAOsy9kbNTgaxvGbyOamC30PRePTQe/o1MFwEKHQk4Cn7BNGaPtjp+PuUrByJehM1hgxfq4sw==}
 
@@ -2371,6 +2383,8 @@ snapshots:
       - prettier-plugin-svelte
       - supports-color
       - svelte
+
+  '@scoretravel/tsconfig@0.0.6': {}
 
   '@scoretravel/vscode@0.1.0':
     dependencies:
@@ -3640,6 +3654,8 @@ snapshots:
   strip-indent@4.1.1: {}
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  tailwind-merge@3.5.0: {}
 
   tailwindcss@4.2.1: {}
 

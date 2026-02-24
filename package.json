@@ -23,11 +23,13 @@
     "lucide-react": "^0.545.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.1.18"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.4",
     "@scoretravel/prettier-config": "^0.0.18",
+    "@scoretravel/tsconfig": "^0.0.6",
     "@scoretravel/vscode": "^0.1.0",
     "@storybook/react-vite": "^10.2.11",
     "@tailwindcss/vite": "^4.2.1",
