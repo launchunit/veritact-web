@@ -12,9 +12,5 @@
   "routerOnly": false,
   "version": 1,
   "framework": "react-cra",
-  "chosenAddOns": [
-    "compiler",
-    "biome",
-    "storybook"
-  ]
+  "chosenAddOns": ["compiler", "biome", "storybook"]
 }
