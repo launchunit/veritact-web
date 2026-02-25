@@ -3,7 +3,7 @@ import { devtools } from '@tanstack/devtools-vite';
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import viteReact from '@vitejs/plugin-react';
 import { defineConfig, mergeConfig } from 'vite';
-// import tsconfigPaths from 'vite-tsconfig-paths';
+import tsconfigPaths from 'vite-tsconfig-paths';
 import { BaseConfig } from '@scoretravel/test-utils/vitest.config';
 import { validateConfig } from '@scoretravel/vite-validate-config';
 
@@ -18,7 +18,7 @@ export default mergeConfig(
       // Note: validateConfig also loads dotenv file via vite
       validateConfig({ file: 'src/config/config.server.ts' }),
       devtools(),
-      // tsconfigPaths({ projects: ['./tsconfig.json'] }),
+      tsconfigPaths({ projects: ['./tsconfig.json'] }),
       tanstackStart(),
       viteReact({
         // https://react.dev/learn/react-compiler
