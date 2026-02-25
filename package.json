@@ -1,5 +1,5 @@
 {
-  "name": "@launchunit/veritact-demo",
+  "name": "@launchunit/veritact-web",
   "type": "module",
   "engines": {
     "node": ">=22.10",
