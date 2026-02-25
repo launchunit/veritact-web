@@ -2,6 +2,7 @@ import tailwindCSS from '@tailwindcss/vite';
 import { devtools } from '@tanstack/devtools-vite';
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import viteReact from '@vitejs/plugin-react';
+import { nitro } from 'nitro/vite';
 import { defineConfig, mergeConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { BaseConfig } from '@scoretravel/test-utils/vitest.config';
@@ -20,6 +21,7 @@ export default mergeConfig(
       devtools(),
       tsconfigPaths({ projects: ['./tsconfig.json'] }),
       tanstackStart(),
+      nitro(),
       viteReact({
         // https://react.dev/learn/react-compiler
         babel: { plugins: ['babel-plugin-react-compiler'] },
