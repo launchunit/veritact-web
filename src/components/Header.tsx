@@ -1,5 +1,5 @@
+import { IconHome, IconMenu2, IconX } from '@tabler/icons-react';
 import { Link } from '@tanstack/react-router';
-import { BookOpen, Home, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Header() {
@@ -13,10 +13,10 @@ export default function Header() {
           onClick={() => setIsOpen(true)}
           className="p-2 hover:bg-gray-700 rounded-lg transition-colors"
           aria-label="Open menu">
-          <Menu size={24} />
+          <IconMenu2 size={24} />
         </button>
         <h1 className="ml-4 text-xl font-semibold">
-          <Link to="/">Score Travel</Link>
+          <Link to="/">Veritact</Link>
         </h1>
       </header>
 
@@ -31,7 +31,7 @@ export default function Header() {
             onClick={() => setIsOpen(false)}
             className="p-2 hover:bg-gray-800 rounded-lg transition-colors"
             aria-label="Close menu">
-            <X size={24} />
+            <IconX size={24} />
           </button>
         </div>
 
@@ -44,23 +44,11 @@ export default function Header() {
               className:
                 'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
             }}>
-            <Home size={20} />
+            <IconHome size={20} />
             <span className="font-medium">Home</span>
           </Link>
 
           {/* Demo Links Start */}
-
-          <Link
-            to="/demo/storybook"
-            onClick={() => setIsOpen(false)}
-            className="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-800 transition-colors mb-2"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-3 rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-colors mb-2',
-            }}>
-            <BookOpen size={20} />
-            <span className="font-medium">Storybook</span>
-          </Link>
 
           {/* Demo Links End */}
         </nav>

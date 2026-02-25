@@ -4,14 +4,17 @@ import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import viteReact from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { validateConfig } from '@scoretravel/vite-validate-config';
 
 // https://vite.dev/config/
 export default defineConfig({
   server: { host: true },
   envDir: false, // Do not load ".env" files
   plugins: [
+    // Note: validateConfig also loads dotenv file via vite
+    validateConfig({ file: 'src/config/config.server.ts' }),
     devtools(),
-    tsconfigPaths(),
+    tsconfigPaths({ projects: ['./tsconfig.json'] }),
     tanstackStart(),
     viteReact({
       // https://react.dev/learn/react-compiler

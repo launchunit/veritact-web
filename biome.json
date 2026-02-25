@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.2.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.3/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -13,7 +13,6 @@
       "!**/*.gen.ts",
       "!**/*.gen.jsx",
       "!**/*.gen.tsx",
-      "!**/src/routeTree.gen.ts",
       "!**/src/*.css"
     ]
   },
@@ -25,22 +24,28 @@
   },
   "linter": {
     "enabled": true,
+    "domains": { "react": "recommended" },
     "rules": {
       "recommended": true,
+      "suspicious": { "noUnknownAtRules": "info" },
       "style": {
         "useConsistentObjectDefinitions": {
           "level": "error",
           "options": {
             "syntax": "shorthand"
           }
-        }
-      },
-      "nursery": {
+        },
+        "noParameterAssign": "error",
+        "useDefaultParameterLast": "error",
+        "useSelfClosingElements": "error",
+        "useSingleVarDeclarator": "error",
+        "noUnusedTemplateLiteral": "error",
+        "useNumberNamespace": "error",
+        "noInferrableTypes": "error",
+        "noUselessElse": "error",
         "useConsistentTypeDefinitions": {
           "level": "error",
-          "options": {
-            "style": "type"
-          }
+          "options": { "style": "type" }
         }
       }
     }
