@@ -4,11 +4,6 @@
   "compilerOptions": {
     "lib": ["ES2024", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
-
-    // Override base (true) — TanStack requires this off
-    // Note: Barrel files and re-exports don't work with verbatimModuleSyntax
-    // "verbatimModuleSyntax": false,
-
     "paths": {
       "@/config/*": ["./src/config/*"],
       "@/routes/*": ["./src/routes/*"],

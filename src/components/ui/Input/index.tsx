@@ -1,22 +1,21 @@
 import { Input as BaseUiInput } from '@base-ui/react/input';
-import { fieldStyles, formDesignStyles } from '@/ui/styles';
-import { cn } from 'tailwind-variants';
-import type { ComponentProps } from 'react';
+import { tv } from 'tailwind-variants';
+import { field } from '@/ui/styles';
+import type { UIProps } from '@/ui/styles';
 
-/**
- * Base styles
- */
-const baseStyles = cn(
-  fieldStyles,
-  formDesignStyles,
-  'w-full border border-border bg-background text-foreground text-sm px-3 py-2',
-  'placeholder:text-muted-foreground'
-);
+const inputStyles = tv({
+  extend: field,
+  base: [
+    'rounded-md',
+    'border-border bg-background text-foreground w-full border px-3 py-2 text-sm',
+    'placeholder:text-muted-foreground',
+  ],
+});
 
-type InputProps = ComponentProps<typeof BaseUiInput>;
+type InputProps = UIProps<typeof BaseUiInput>;
 
 function Input({ className, ...props }: Readonly<InputProps>) {
-  return <BaseUiInput className={cn(baseStyles, className)} {...props} />;
+  return <BaseUiInput className={inputStyles({ class: className })} {...props} />;
 }
 
 /**

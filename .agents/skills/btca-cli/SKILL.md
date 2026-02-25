@@ -7,7 +7,7 @@ Query library/framework documentation using the `btca` CLI. The CLI clones the r
 
 ## Usage
 
-1. Read `btca.config.jsonc` at the project root to find available resources and their names
+1. Read `.vscode/btca.config.jsonc` to find available resources and their names
 2. Run `btca ask` from the project root:
 
 ```shell

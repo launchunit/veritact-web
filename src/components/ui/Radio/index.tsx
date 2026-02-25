@@ -1,13 +1,13 @@
 import { Radio as BaseUiRadio } from '@base-ui/react/radio';
 import { RadioGroup as BaseUiRadioGroup } from '@base-ui/react/radio-group';
-import { checkControlStyles } from '@/ui/styles';
-import { cn } from 'tailwind-variants';
-import type { ComponentProps } from 'react';
+import { cn, tv } from 'tailwind-variants';
+import { checkControl } from '@/ui/styles';
+import type { UIProps } from '@/ui/styles';
 
 /**
  * RadioGroup
  */
-type RadioGroupProps = ComponentProps<typeof BaseUiRadioGroup>;
+type RadioGroupProps = UIProps<typeof BaseUiRadioGroup>;
 
 function RadioGroup({ className, ...props }: Readonly<RadioGroupProps>) {
   return <BaseUiRadioGroup className={cn('flex flex-col gap-2', className)} {...props} />;
@@ -16,13 +16,16 @@ function RadioGroup({ className, ...props }: Readonly<RadioGroupProps>) {
 /**
  * RadioItem
  */
-const radioBaseStyles = cn(checkControlStyles, 'rounded-full');
+const radioStyles = tv({
+  extend: checkControl,
+  base: 'rounded-full',
+});
 
-type RadioItemProps = ComponentProps<typeof BaseUiRadio.Root>;
+type RadioItemProps = UIProps<typeof BaseUiRadio.Root>;
 
 function RadioItem({ className, ...props }: Readonly<RadioItemProps>) {
   return (
-    <BaseUiRadio.Root className={cn(radioBaseStyles, className)} {...props}>
+    <BaseUiRadio.Root className={radioStyles({ class: className })} {...props}>
       <BaseUiRadio.Indicator className="bg-primary-foreground size-2 rounded-full data-unchecked:hidden" />
     </BaseUiRadio.Root>
   );

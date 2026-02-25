@@ -1,24 +1,25 @@
 import { type LinkComponent, createLink } from '@tanstack/react-router';
-import { focusStyles, transitionStyles } from '@/ui/styles';
-import { cn } from 'tailwind-variants';
+import { tv } from 'tailwind-variants';
+import { base } from '@/ui/styles';
 import type { ComponentProps, Ref } from 'react';
 
-const linkStyles = cn(
-  transitionStyles,
-  focusStyles,
-  'shrink-0 cursor-pointer',
-  'inline-flex items-center justify-center',
-  'text-primary no-underline focus-visible:rounded-sm',
-  'hover:underline hover:underline-offset-2',
-  'active:not-data-disabled:scale-[0.96]'
-);
+const linkStyles = tv({
+  extend: base,
+  base: [
+    'shrink-0 cursor-pointer',
+    'inline-flex items-center justify-center',
+    'text-primary no-underline focus-visible:rounded-sm',
+    'hover:underline hover:underline-offset-2',
+    'active:not-data-disabled:scale-[0.96]',
+  ],
+});
 
 function BaseLink({
   className,
   ref,
   ...props
 }: Readonly<Omit<ComponentProps<'a'>, 'ref'> & { ref?: Ref<HTMLAnchorElement> }>) {
-  return <a ref={ref} className={cn(linkStyles, className)} {...props} />;
+  return <a ref={ref} className={linkStyles({ class: className })} {...props} />;
 }
 
 const CreatedLink = createLink(BaseLink);
@@ -29,7 +30,12 @@ const Link: LinkComponent<typeof BaseLink> = (props) => {
 
 function ExternalLink({ className, ...props }: Readonly<ComponentProps<'a'>>) {
   return (
-    <a className={cn(linkStyles, className)} rel="noopener noreferrer" target="_blank" {...props} />
+    <a
+      className={linkStyles({ class: className })}
+      rel="noopener noreferrer"
+      target="_blank"
+      {...props}
+    />
   );
 }
 

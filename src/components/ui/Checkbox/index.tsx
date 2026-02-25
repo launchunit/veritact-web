@@ -1,13 +1,13 @@
 import { Checkbox as BaseUiCheckbox } from '@base-ui/react/checkbox';
 import { CheckboxGroup as BaseUiCheckboxGroup } from '@base-ui/react/checkbox-group';
-import { checkControlStyles } from '@/ui/styles';
-import { cn } from 'tailwind-variants';
-import type { ComponentProps } from 'react';
+import { cn, tv } from 'tailwind-variants';
+import { checkControl } from '@/ui/styles';
+import type { UIProps } from '@/ui/styles';
 
 /**
  * CheckboxGroup
  */
-type CheckboxGroupProps = ComponentProps<typeof BaseUiCheckboxGroup>;
+type CheckboxGroupProps = UIProps<typeof BaseUiCheckboxGroup>;
 
 function CheckboxGroup({ className, ...props }: Readonly<CheckboxGroupProps>) {
   return <BaseUiCheckboxGroup className={cn('flex flex-col gap-2', className)} {...props} />;
@@ -16,11 +16,10 @@ function CheckboxGroup({ className, ...props }: Readonly<CheckboxGroupProps>) {
 /**
  * Checkbox
  */
-const checkboxBaseStyles = cn(
-  checkControlStyles,
-  'rounded-sm',
-  'data-indeterminate:border-primary data-indeterminate:bg-primary'
-);
+const checkboxStyles = tv({
+  extend: checkControl,
+  base: ['rounded-sm', 'data-indeterminate:border-primary data-indeterminate:bg-primary'],
+});
 
 const indeterminateIcon = (
   <svg
@@ -49,11 +48,11 @@ const checkIcon = (
   </svg>
 );
 
-type CheckboxProps = ComponentProps<typeof BaseUiCheckbox.Root>;
+type CheckboxProps = UIProps<typeof BaseUiCheckbox.Root>;
 
 function Checkbox({ className, ...props }: Readonly<CheckboxProps>) {
   return (
-    <BaseUiCheckbox.Root className={cn(checkboxBaseStyles, className)} {...props}>
+    <BaseUiCheckbox.Root className={checkboxStyles({ class: className })} {...props}>
       <BaseUiCheckbox.Indicator
         className="text-primary-foreground flex data-unchecked:hidden"
         keepMounted

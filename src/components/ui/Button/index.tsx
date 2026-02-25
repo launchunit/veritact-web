@@ -1,38 +1,32 @@
 import { Button as BaseUiButton } from '@base-ui/react/button';
-import { type LinkComponent, createLink } from '@tanstack/react-router';
-import { disabledStyles, focusStyles, formDesignStyles, transitionStyles } from '@/ui/styles';
-import { type VariantProps, cn, tv } from 'tailwind-variants';
-import type { ComponentProps, Ref } from 'react';
-
-/**
- * Base styles
- */
-const baseStyles = cn(
-  transitionStyles,
-  formDesignStyles,
-  focusStyles,
-  // Also show outline on mouse click (not just keyboard)
-  // 'focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-ring',
-  disabledStyles,
-  'cursor-pointer', // Tailwind-v4 switched to "cursor: default" for disabled states so we set to "cursor-pointer"
-  'shrink-0 inline-flex select-none items-center justify-center gap-x-2 whitespace-nowrap no-underline',
-  'font-medium', // Design styles
-  'active:not-data-disabled:scale-[0.96]' // Scale down on click
-);
+import { createLink } from '@tanstack/react-router';
+import { tv } from 'tailwind-variants';
+import { type UIProps, base } from '@/ui/styles';
+import type { LinkComponent } from '@tanstack/react-router';
+import type { Ref } from 'react';
+import type { VariantProps } from 'tailwind-variants';
 
 const buttonVariants = tv({
-  base: baseStyles,
+  extend: base,
+  base: [
+    'cursor-pointer', // Tailwind-v4 switched to "cursor: default" for disabled states so we set to "cursor-pointer"
+    'inline-flex shrink-0 items-center justify-center gap-x-2 whitespace-nowrap no-underline select-none',
+    'active:not-data-disabled:scale-[0.96]', // Scale down on click
+    // Also show outline on mouse click (not just keyboard)
+    // 'focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-ring',
+    'rounded-md font-medium', // Design styles
+  ],
   variants: {
     variant: {
       default:
-        'border border-primary bg-primary text-primary-foreground hover:not-data-disabled:border-primary/90 hover:not-data-disabled:bg-primary/90',
+        'border-primary bg-primary text-primary-foreground hover:not-data-disabled:border-primary/90 hover:not-data-disabled:bg-primary/90 border',
       destructive:
-        'border border-destructive bg-destructive text-destructive-foreground hover:not-data-disabled:border-destructive/90 hover:not-data-disabled:bg-destructive/90',
+        'border-destructive bg-destructive text-destructive-foreground hover:not-data-disabled:border-destructive/90 hover:not-data-disabled:bg-destructive/90 border',
       outline:
-        'border border-border bg-background hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground',
+        'border-border bg-background hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground border',
       secondary:
-        'border border-secondary bg-secondary text-secondary-foreground hover:not-data-disabled:border-secondary/80 hover:not-data-disabled:bg-secondary/80',
-      link: 'border-transparent bg-transparent font-normal text-primary rounded-sm px-0.5 py-0 hover:not-data-disabled:underline hover:not-data-disabled:underline-offset-2',
+        'border-secondary bg-secondary text-secondary-foreground hover:not-data-disabled:border-secondary/80 hover:not-data-disabled:bg-secondary/80 border',
+      link: 'text-primary rounded-sm border-transparent bg-transparent px-0.5 py-0 font-normal hover:not-data-disabled:underline hover:not-data-disabled:underline-offset-2',
     },
     size: {
       default: 'h-10 px-4 py-2',
@@ -48,15 +42,15 @@ const buttonVariants = tv({
   },
 });
 
-type ButtonProps = ComponentProps<typeof BaseUiButton> & VariantProps<typeof buttonVariants>;
+type ButtonProps = UIProps<typeof BaseUiButton> & VariantProps<typeof buttonVariants>;
 
 function buttonClassName({
   variant,
   size,
   className,
-}: Readonly<Pick<ButtonProps, 'variant' | 'size' | 'className'>>) {
+}: Readonly<Pick<ButtonProps, 'variant' | 'size'> & { className?: string | undefined }>) {
   const resolvedSize = size ?? (variant === 'link' ? 'none' : undefined);
-  return cn(buttonVariants({ variant, size: resolvedSize }), className);
+  return buttonVariants({ variant, size: resolvedSize, class: className });
 }
 
 function Button({ className, variant, size, ...props }: Readonly<ButtonProps>) {

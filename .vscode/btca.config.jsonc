@@ -166,6 +166,20 @@
     },
     {
       "type": "git",
+      "name": "tailwind-merge",
+      "url": "https://github.com/dcastil/tailwind-merge",
+      "branch": "main",
+      "searchPaths": ["docs"]
+    },
+    {
+      "type": "git",
+      "name": "tailwind-variants",
+      "url": "https://github.com/heroui-inc/tailwind-variants-docs",
+      "branch": "main",
+      "searchPaths": ["pages/docs"]
+    },
+    {
+      "type": "git",
       "name": "storybook",
       "url": "https://github.com/storybookjs/storybook",
       "branch": "main",
