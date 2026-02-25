@@ -49,3 +49,6 @@ pids
 **/wip/
 **/wip-*/
 **/*.gen.ts
+
+# Generated Tanstack file
+!**/routeTree.gen.ts
