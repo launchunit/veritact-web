@@ -3,7 +3,7 @@
   "type": "module",
   "engines": {
     "node": ">=22.10",
-    "pnpm": "9.15.9"
+    "pnpm": ">=9.15"
   },
   "scripts": {
     "//": "Skipping husky in CI environments",
