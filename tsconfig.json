@@ -2,15 +2,20 @@
   "extends": "@scoretravel/tsconfig/tsconfig.base.json",
 
   "compilerOptions": {
-    "target": "ES2022",
-    "jsx": "react-jsx",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": ["ES2024", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
-    "noUncheckedSideEffectImports": true,
-    "baseUrl": ".",
+
+    // Override base (true) — TanStack requires this off
+    // Note: Barrel files and re-exports don't work with verbatimModuleSyntax
+    // "verbatimModuleSyntax": false,
+
     "paths": {
-      "@/*": ["./src/*"]
+      "@/config/*": ["./src/config/*"],
+      "@/routes/*": ["./src/routes/*"],
+      "@/ui/*": ["./src/components/ui/*"],
+      "@/blocks/*": ["./src/components/blocks/*"],
+      "@/utils/*": ["./src/utils/*"]
     }
   },
-  "exclude": [".btca/"]
+  "exclude": ["dist/", "storybook-static/"]
 }

@@ -22,7 +22,8 @@ const schema = z
         function (val) {
           if (String(val).startsWith('prod')) {
             return 'production';
-          } else if (String(val).startsWith('dev')) {
+          }
+          if (String(val).startsWith('dev')) {
             return 'development';
           }
           return val;

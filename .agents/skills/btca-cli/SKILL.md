@@ -1,13 +1,26 @@
 ---
 name: btca-cli
-description: Invoke this skill when the user says "use btca"
+description: Invoke this skill when the user says "use btca" or "use btca cli". Queries library documentation via the btca CLI
 ---
 
-1. Check `btca.config.jsonc` for the list of available libraries/resources
+Query library/framework documentation using the `btca` CLI. The CLI clones the resource repo (if not already cached), searches the docs, and returns an LLM-generated answer
 
-2. Ask btca questions about specific libraries/resources
+## Usage
+
+1. Read `btca.config.jsonc` at the project root to find available resources and their names
+2. Run `btca ask` from the project root:
 
 ```shell
-# Always run from the root of this project
-$ btca ask --resource fastify --resource hono --question "How do I integrate Fastify with Hono?"
+# Single resource
+btca ask -r "<your question>" < resource-name > -q
+
+# Multiple resources
+btca ask -r fastify -r hono -q "How do I integrate Fastify with Hono?"
 ```
+
+## Flags
+
+| Flag         | Alias | Description                                                                           |
+| ------------ | ----- | ------------------------------------------------------------------------------------- |
+| `--resource` | `-r`  | Resource name (from `btca.config.jsonc`). Can be repeated for multi-resource queries. |
+| `--question` | `-q`  | The question to ask about the resource(s).                                            |

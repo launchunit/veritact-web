@@ -5,6 +5,8 @@
     "clientKind": "git",
     "useIgnoreFile": true
   },
+  "formatter": { "enabled": false },
+  "assist": { "enabled": false },
   "files": {
     "ignoreUnknown": false,
     "includes": [
@@ -13,27 +15,24 @@
       "!**/*.gen.ts",
       "!**/*.gen.jsx",
       "!**/*.gen.tsx",
-      "!**/src/*.css"
+      "!**/src/*.css",
+      "!**/.btca/"
     ]
-  },
-  "formatter": {
-    "enabled": false
-  },
-  "assist": {
-    "enabled": false
   },
   "linter": {
     "enabled": true,
     "domains": { "react": "recommended" },
     "rules": {
       "recommended": true,
+      "complexity": {
+        "useArrowFunction": "off",
+        "useLiteralKeys": "off"
+      },
       "suspicious": { "noUnknownAtRules": "info" },
       "style": {
         "useConsistentObjectDefinitions": {
           "level": "error",
-          "options": {
-            "syntax": "shorthand"
-          }
+          "options": { "syntax": "shorthand" }
         },
         "noParameterAssign": "error",
         "useDefaultParameterLast": "error",
@@ -49,5 +48,14 @@
         }
       }
     }
-  }
+  },
+  // Do not enforce a11y rules for stories
+  "overrides": [
+    {
+      "includes": ["**/*.stories.tsx"],
+      "linter": {
+        "rules": { "a11y": { "noLabelWithoutControl": "off" } }
+      }
+    }
+  ]
 }

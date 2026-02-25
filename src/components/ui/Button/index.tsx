@@ -1,13 +1,8 @@
 import { Button as BaseUiButton } from '@base-ui/react/button';
 import { type LinkComponent, createLink } from '@tanstack/react-router';
 import { type VariantProps, cva } from 'class-variance-authority';
-import {
-  disabledStyles,
-  focusStyles,
-  formDesignStyles,
-  transitionStyles,
-} from '@/components/ui/styles';
-import { cn } from '@/lib/utils';
+import { disabledStyles, focusStyles, formDesignStyles, transitionStyles } from '@/ui/styles';
+import { cn } from '@/utils/style-utils';
 import type { ComponentProps, Ref } from 'react';
 
 /**
@@ -78,6 +73,8 @@ function BaseUiButtonLink({
   return (
     <BaseUiButton
       ref={ref}
+      // biome-ignore lint/a11y/useValidAnchor: render prop template (href is injected by TanStack Router's createLink)
+      // biome-ignore lint/a11y/useAnchorContent: render prop template (children are injected by TanStack Router's createLink)
       render={<a />}
       className={buttonClassName({ variant, size, className })}
       {...props}
