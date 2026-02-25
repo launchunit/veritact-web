@@ -13,3 +13,4 @@ alwaysApply: true
 - Function comments should use present tense verbs (eg. "Get the value" not "Gets the value")
 - For naming conventions, use Id instead of ID
 - Prefer type inference over explicit type definitions. Let TypeScript infer types from function parameters and return values rather than creating separate type aliases for intermediate values
+- Biome is used only for linting, not formatting. Prettier handles all formatting. Do not confuse the two

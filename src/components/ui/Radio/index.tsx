@@ -1,7 +1,7 @@
 import { Radio as BaseUiRadio } from '@base-ui/react/radio';
 import { RadioGroup as BaseUiRadioGroup } from '@base-ui/react/radio-group';
 import { checkControlStyles } from '@/ui/styles';
-import { cn } from '@/utils/style-utils';
+import { cn } from 'tailwind-variants';
 import type { ComponentProps } from 'react';
 
 /**

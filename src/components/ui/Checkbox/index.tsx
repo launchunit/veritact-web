@@ -1,7 +1,7 @@
 import { Checkbox as BaseUiCheckbox } from '@base-ui/react/checkbox';
 import { CheckboxGroup as BaseUiCheckboxGroup } from '@base-ui/react/checkbox-group';
 import { checkControlStyles } from '@/ui/styles';
-import { cn } from '@/utils/style-utils';
+import { cn } from 'tailwind-variants';
 import type { ComponentProps } from 'react';
 
 /**

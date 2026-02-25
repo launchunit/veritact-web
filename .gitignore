@@ -11,6 +11,8 @@
 **/dist/
 **/build/
 **/output/
+**/.output/
+**/out/
 **/storybook-static/
 **/.tanstack/
 **/tmp/

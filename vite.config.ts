@@ -18,13 +18,13 @@ export default mergeConfig(
       // Note: validateConfig also loads dotenv file via vite
       validateConfig({ file: 'src/config/config.server.ts' }),
       devtools(),
-      tanstackStart(),
       nitro(),
+      tanstackStart(),
+      tailwindCSS(),
       viteReact({
         // https://react.dev/learn/react-compiler
         babel: { plugins: ['babel-plugin-react-compiler'] },
       }),
-      tailwindCSS(),
     ],
   })
 );

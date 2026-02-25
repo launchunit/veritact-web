@@ -1,4 +1,4 @@
-import { cn } from '@/utils/style-utils';
+import { cn } from 'tailwind-variants';
 
 /**
  * Shared style primitives for all UI components

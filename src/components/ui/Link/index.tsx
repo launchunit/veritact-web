@@ -1,6 +1,6 @@
 import { type LinkComponent, createLink } from '@tanstack/react-router';
 import { focusStyles, transitionStyles } from '@/ui/styles';
-import { cn } from '@/utils/style-utils';
+import { cn } from 'tailwind-variants';
 import type { ComponentProps, Ref } from 'react';
 
 const linkStyles = cn(

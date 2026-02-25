@@ -1,8 +1,7 @@
 import { Button as BaseUiButton } from '@base-ui/react/button';
 import { type LinkComponent, createLink } from '@tanstack/react-router';
-import { type VariantProps, cva } from 'class-variance-authority';
 import { disabledStyles, focusStyles, formDesignStyles, transitionStyles } from '@/ui/styles';
-import { cn } from '@/utils/style-utils';
+import { type VariantProps, cn, tv } from 'tailwind-variants';
 import type { ComponentProps, Ref } from 'react';
 
 /**
@@ -21,7 +20,8 @@ const baseStyles = cn(
   'active:not-data-disabled:scale-[0.96]' // Scale down on click
 );
 
-const buttonVariants = cva(baseStyles, {
+const buttonVariants = tv({
+  base: baseStyles,
   variants: {
     variant: {
       default:

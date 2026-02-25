@@ -1,6 +1,6 @@
 import { Input as BaseUiInput } from '@base-ui/react/input';
 import { fieldStyles, formDesignStyles } from '@/ui/styles';
-import { cn } from '@/utils/style-utils';
+import { cn } from 'tailwind-variants';
 import type { ComponentProps } from 'react';
 
 /**

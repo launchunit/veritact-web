@@ -14,8 +14,7 @@
       "@/routes/*": ["./src/routes/*"],
       "@/styles.css": ["./src/styles.css"],
       "@/ui/*": ["./src/components/ui/*"],
-      "@/blocks/*": ["./src/components/blocks/*"],
-      "@/utils/*": ["./src/utils/*"]
+      "@/blocks/*": ["./src/components/blocks/*"]
     }
   },
   "exclude": ["dist/", "storybook-static/"]
