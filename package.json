@@ -34,10 +34,10 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.3",
-    "@scoretravel/prettier-config": "^0.0.18",
-    "@scoretravel/tsconfig": "^0.0.7",
+    "@scoretravel/prettier-config": "^0.0.19",
+    "@scoretravel/tsconfig": "^0.0.9",
     "@scoretravel/vite-validate-config": "^0.0.5",
-    "@scoretravel/vscode": "^0.1.0",
+    "@scoretravel/vscode": "^0.1.2",
     "@storybook/react-vite": "^10.2.11",
     "@tailwindcss/vite": "^4.2.1",
     "@tanstack/devtools-vite": "^0.3.11",

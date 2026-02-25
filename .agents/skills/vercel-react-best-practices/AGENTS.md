@@ -1,13 +1,13 @@
 # React Best Practices
 
-**Version 1.0.0**
-Vercel Engineering
+**Version 1.0.0**  
+Vercel Engineering  
 January 2026
 
-> **Note:**
-> This document is mainly for agents and LLMs to follow when maintaining,
-> generating, or refactoring React and Next.js codebases. Humans
-> may also find it useful, but guidance here is optimized for automation
+> **Note:**  
+> This document is mainly for agents and LLMs to follow when maintaining,  
+> generating, or refactoring React and Next.js codebases. Humans  
+> may also find it useful, but guidance here is optimized for automation  
 > and consistency by AI-assisted workflows.
 
 ---
@@ -1861,7 +1861,7 @@ Apply `content-visibility: auto` to defer off-screen rendering.
 ```tsx
 function MessageList({ messages }: { messages: Message[] }) {
   return (
-    <div className="overflow-y-auto h-screen">
+    <div className="h-screen overflow-y-auto">
       {messages.map((msg) => (
         <div key={msg.id} className="message-item">
           <Avatar user={msg.author} />
@@ -1885,7 +1885,7 @@ Extract static JSX outside components to avoid re-creation.
 
 ```tsx
 function LoadingSkeleton() {
-  return <div className="animate-pulse h-20 bg-gray-200" />;
+  return <div className="h-20 animate-pulse bg-gray-200" />;
 }
 
 function Container() {
@@ -1896,7 +1896,7 @@ function Container() {
 **Correct: reuses same element**
 
 ```tsx
-const loadingSkeleton = <div className="animate-pulse h-20 bg-gray-200" />;
+const loadingSkeleton = <div className="h-20 animate-pulse bg-gray-200" />;
 
 function Container() {
   return <div>{loading && loadingSkeleton}</div>;

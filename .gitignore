@@ -11,6 +11,7 @@
 **/dist/
 **/build/
 **/output/
+**/storybook-static/
 **/.tanstack/
 **/tmp/
 **/node_modules/
@@ -48,6 +49,3 @@ pids
 **/wip/
 **/wip-*/
 **/*.gen.ts
-
-# Claude (ignore this for now)
-.claude/

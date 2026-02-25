@@ -1,4 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
+import { Button, ButtonLink } from '@/components/ui/Button';
+import { Input } from '@/components/ui/Input';
+import { Link } from '@/components/ui/Link';
 
 export const Route = createFileRoute('/')({
   ssr: true,
@@ -7,11 +10,23 @@ export const Route = createFileRoute('/')({
 
 function App() {
   return (
-    <div className="min-h-screen bg-linear-to-b from-slate-900 via-slate-800 to-slate-900">
-      <section className="relative py-20 px-6 text-center overflow-hidden">
-        <p className="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
-          Full-stack framework powered by TanStack Router
-        </p>
+    <div className="bg-background min-h-screen">
+      <section className="relative overflow-hidden px-6 py-20 text-center">
+        <ButtonLink variant="link" to="/">
+          Button Link
+        </ButtonLink>
+        <br />
+        <Link to="/">Link</Link>
+        <br />
+        <br />
+        <Button>Button</Button>
+        <br />
+        <br />
+        <Button disabled>Button</Button>
+        <br />
+        <br />
+        <Input placeholder="Input" />
+        <br />
       </section>
     </div>
   );

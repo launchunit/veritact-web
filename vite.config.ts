@@ -6,10 +6,11 @@ import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 import { validateConfig } from '@scoretravel/vite-validate-config';
 
-// https://vite.dev/config/
+// https://vite.dev/config
 export default defineConfig({
   server: { host: true },
   envDir: false, // Do not load ".env" files
+  optimizeDeps: { include: ['@tabler/icons-react'] },
   plugins: [
     // Note: validateConfig also loads dotenv file via vite
     validateConfig({ file: 'src/config/config.server.ts' }),

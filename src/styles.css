@@ -24,6 +24,7 @@
   --color-destructive-foreground: oklch(98% 0.01 264);
 
   --color-border: oklch(91% 0.01 264);
+  --color-border-hover: oklch(83% 0.01 264);
   --color-ring: oklch(14.5% 0.025 264);
 
   --color-card: oklch(100% 0 0);
@@ -41,14 +42,14 @@
 
 @layer base {
   /* To debug */
-  * {
+  /* * {
     @apply outline-dashed outline-red-400;
-  }
+  } */
   html {
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }
   body {
-    @apply min-h-full bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground min-h-full font-sans antialiased;
   }
 }
