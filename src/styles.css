@@ -5,7 +5,7 @@
   --font-sans: 'Inter Variable', sans-serif;
 
   /* Semantic color tokens using OKLCH for better color perception */
-  --color-background: oklch(100% 0 0);
+  --color-background: oklch(98.5% 0.002 249);
   --color-foreground: oklch(14.5% 0.025 264);
 
   --color-primary: oklch(14.5% 0.025 264);
@@ -46,6 +46,8 @@
     @apply outline-dashed outline-red-400;
   } */
   html {
+    color-scheme: light;
+    background-color: var(--color-background);
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }

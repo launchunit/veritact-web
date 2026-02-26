@@ -32,7 +32,6 @@
   "devDependencies": {
     "@biomejs/biome": "2.4.4",
     "@scoretravel/prettier-config": "^0.0.19",
-    "@scoretravel/test-utils": "^0.1.5",
     "@scoretravel/tsconfig": "^0.0.9",
     "@scoretravel/vite-validate-config": "^0.0.5",
     "@scoretravel/vscode": "^0.1.2",
@@ -54,7 +53,7 @@
     "type-fest": "^5.4.4",
     "typescript": "^5.7.2",
     "vite": "^7.1.7",
-    "vitest": "^4.0.18"
+    "vite-tsconfig-paths": "^6.1.1"
   },
   "prettier": "@scoretravel/prettier-config"
 }

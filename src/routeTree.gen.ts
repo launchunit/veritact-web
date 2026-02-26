@@ -10,33 +10,339 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as PartnersIndexRouteImport } from './routes/partners/index'
+import { Route as HelpIndexRouteImport } from './routes/help/index'
+import { Route as DemosIndexRouteImport } from './routes/demos/index'
+import { Route as CustomersIndexRouteImport } from './routes/customers/index'
+import { Route as ContactIndexRouteImport } from './routes/contact/index'
+import { Route as CareersIndexRouteImport } from './routes/careers/index'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as AboutIndexRouteImport } from './routes/about/index'
+import { Route as SolutionsHomeInstallationRouteImport } from './routes/solutions/home-installation'
+import { Route as SolutionsFleetMaintenanceRouteImport } from './routes/solutions/fleet-maintenance'
+import { Route as SolutionsClaimsIntegrityRouteImport } from './routes/solutions/claims-integrity'
+import { Route as PartnersSlugRouteImport } from './routes/partners/$slug'
+import { Route as LegalTermsRouteImport } from './routes/legal/terms'
+import { Route as LegalPrivacyPolicyRouteImport } from './routes/legal/privacy-policy'
+import { Route as CustomersSlugRouteImport } from './routes/customers/$slug'
+import { Route as ContactSalesRouteImport } from './routes/contact/sales'
+import { Route as CareersSlugRouteImport } from './routes/careers/$slug'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
+import { Route as HelpKnowledgeIndexRouteImport } from './routes/help/knowledge/index'
+import { Route as DemosSlugIndexRouteImport } from './routes/demos/$slug/index'
+import { Route as HelpKnowledgeTopicRouteImport } from './routes/help/knowledge/$topic'
+import { Route as DemosSlugAppSlugRouteImport } from './routes/demos/$slug/$appSlug'
+import { Route as HelpKnowledgeGuideSlugRouteImport } from './routes/help/knowledge/guide/$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PartnersIndexRoute = PartnersIndexRouteImport.update({
+  id: '/partners/',
+  path: '/partners/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpIndexRoute = HelpIndexRouteImport.update({
+  id: '/help/',
+  path: '/help/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemosIndexRoute = DemosIndexRouteImport.update({
+  id: '/demos/',
+  path: '/demos/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomersIndexRoute = CustomersIndexRouteImport.update({
+  id: '/customers/',
+  path: '/customers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactIndexRoute = ContactIndexRouteImport.update({
+  id: '/contact/',
+  path: '/contact/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersIndexRoute = CareersIndexRouteImport.update({
+  id: '/careers/',
+  path: '/careers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutIndexRoute = AboutIndexRouteImport.update({
+  id: '/about/',
+  path: '/about/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsHomeInstallationRoute =
+  SolutionsHomeInstallationRouteImport.update({
+    id: '/solutions/home-installation',
+    path: '/solutions/home-installation',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SolutionsFleetMaintenanceRoute =
+  SolutionsFleetMaintenanceRouteImport.update({
+    id: '/solutions/fleet-maintenance',
+    path: '/solutions/fleet-maintenance',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const SolutionsClaimsIntegrityRoute =
+  SolutionsClaimsIntegrityRouteImport.update({
+    id: '/solutions/claims-integrity',
+    path: '/solutions/claims-integrity',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PartnersSlugRoute = PartnersSlugRouteImport.update({
+  id: '/partners/$slug',
+  path: '/partners/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalTermsRoute = LegalTermsRouteImport.update({
+  id: '/legal/terms',
+  path: '/legal/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalPrivacyPolicyRoute = LegalPrivacyPolicyRouteImport.update({
+  id: '/legal/privacy-policy',
+  path: '/legal/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomersSlugRoute = CustomersSlugRouteImport.update({
+  id: '/customers/$slug',
+  path: '/customers/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactSalesRoute = ContactSalesRouteImport.update({
+  id: '/contact/sales',
+  path: '/contact/sales',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersSlugRoute = CareersSlugRouteImport.update({
+  id: '/careers/$slug',
+  path: '/careers/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpKnowledgeIndexRoute = HelpKnowledgeIndexRouteImport.update({
+  id: '/help/knowledge/',
+  path: '/help/knowledge/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemosSlugIndexRoute = DemosSlugIndexRouteImport.update({
+  id: '/demos/$slug/',
+  path: '/demos/$slug/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpKnowledgeTopicRoute = HelpKnowledgeTopicRouteImport.update({
+  id: '/help/knowledge/$topic',
+  path: '/help/knowledge/$topic',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemosSlugAppSlugRoute = DemosSlugAppSlugRouteImport.update({
+  id: '/demos/$slug/$appSlug',
+  path: '/demos/$slug/$appSlug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HelpKnowledgeGuideSlugRoute = HelpKnowledgeGuideSlugRouteImport.update({
+  id: '/help/knowledge/guide/$slug',
+  path: '/help/knowledge/guide/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/careers/$slug': typeof CareersSlugRoute
+  '/contact/sales': typeof ContactSalesRoute
+  '/customers/$slug': typeof CustomersSlugRoute
+  '/legal/privacy-policy': typeof LegalPrivacyPolicyRoute
+  '/legal/terms': typeof LegalTermsRoute
+  '/partners/$slug': typeof PartnersSlugRoute
+  '/solutions/claims-integrity': typeof SolutionsClaimsIntegrityRoute
+  '/solutions/fleet-maintenance': typeof SolutionsFleetMaintenanceRoute
+  '/solutions/home-installation': typeof SolutionsHomeInstallationRoute
+  '/about/': typeof AboutIndexRoute
+  '/blog/': typeof BlogIndexRoute
+  '/careers/': typeof CareersIndexRoute
+  '/contact/': typeof ContactIndexRoute
+  '/customers/': typeof CustomersIndexRoute
+  '/demos/': typeof DemosIndexRoute
+  '/help/': typeof HelpIndexRoute
+  '/partners/': typeof PartnersIndexRoute
+  '/demos/$slug/$appSlug': typeof DemosSlugAppSlugRoute
+  '/help/knowledge/$topic': typeof HelpKnowledgeTopicRoute
+  '/demos/$slug/': typeof DemosSlugIndexRoute
+  '/help/knowledge/': typeof HelpKnowledgeIndexRoute
+  '/help/knowledge/guide/$slug': typeof HelpKnowledgeGuideSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/careers/$slug': typeof CareersSlugRoute
+  '/contact/sales': typeof ContactSalesRoute
+  '/customers/$slug': typeof CustomersSlugRoute
+  '/legal/privacy-policy': typeof LegalPrivacyPolicyRoute
+  '/legal/terms': typeof LegalTermsRoute
+  '/partners/$slug': typeof PartnersSlugRoute
+  '/solutions/claims-integrity': typeof SolutionsClaimsIntegrityRoute
+  '/solutions/fleet-maintenance': typeof SolutionsFleetMaintenanceRoute
+  '/solutions/home-installation': typeof SolutionsHomeInstallationRoute
+  '/about': typeof AboutIndexRoute
+  '/blog': typeof BlogIndexRoute
+  '/careers': typeof CareersIndexRoute
+  '/contact': typeof ContactIndexRoute
+  '/customers': typeof CustomersIndexRoute
+  '/demos': typeof DemosIndexRoute
+  '/help': typeof HelpIndexRoute
+  '/partners': typeof PartnersIndexRoute
+  '/demos/$slug/$appSlug': typeof DemosSlugAppSlugRoute
+  '/help/knowledge/$topic': typeof HelpKnowledgeTopicRoute
+  '/demos/$slug': typeof DemosSlugIndexRoute
+  '/help/knowledge': typeof HelpKnowledgeIndexRoute
+  '/help/knowledge/guide/$slug': typeof HelpKnowledgeGuideSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/careers/$slug': typeof CareersSlugRoute
+  '/contact/sales': typeof ContactSalesRoute
+  '/customers/$slug': typeof CustomersSlugRoute
+  '/legal/privacy-policy': typeof LegalPrivacyPolicyRoute
+  '/legal/terms': typeof LegalTermsRoute
+  '/partners/$slug': typeof PartnersSlugRoute
+  '/solutions/claims-integrity': typeof SolutionsClaimsIntegrityRoute
+  '/solutions/fleet-maintenance': typeof SolutionsFleetMaintenanceRoute
+  '/solutions/home-installation': typeof SolutionsHomeInstallationRoute
+  '/about/': typeof AboutIndexRoute
+  '/blog/': typeof BlogIndexRoute
+  '/careers/': typeof CareersIndexRoute
+  '/contact/': typeof ContactIndexRoute
+  '/customers/': typeof CustomersIndexRoute
+  '/demos/': typeof DemosIndexRoute
+  '/help/': typeof HelpIndexRoute
+  '/partners/': typeof PartnersIndexRoute
+  '/demos/$slug/$appSlug': typeof DemosSlugAppSlugRoute
+  '/help/knowledge/$topic': typeof HelpKnowledgeTopicRoute
+  '/demos/$slug/': typeof DemosSlugIndexRoute
+  '/help/knowledge/': typeof HelpKnowledgeIndexRoute
+  '/help/knowledge/guide/$slug': typeof HelpKnowledgeGuideSlugRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/blog/$slug'
+    | '/careers/$slug'
+    | '/contact/sales'
+    | '/customers/$slug'
+    | '/legal/privacy-policy'
+    | '/legal/terms'
+    | '/partners/$slug'
+    | '/solutions/claims-integrity'
+    | '/solutions/fleet-maintenance'
+    | '/solutions/home-installation'
+    | '/about/'
+    | '/blog/'
+    | '/careers/'
+    | '/contact/'
+    | '/customers/'
+    | '/demos/'
+    | '/help/'
+    | '/partners/'
+    | '/demos/$slug/$appSlug'
+    | '/help/knowledge/$topic'
+    | '/demos/$slug/'
+    | '/help/knowledge/'
+    | '/help/knowledge/guide/$slug'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/blog/$slug'
+    | '/careers/$slug'
+    | '/contact/sales'
+    | '/customers/$slug'
+    | '/legal/privacy-policy'
+    | '/legal/terms'
+    | '/partners/$slug'
+    | '/solutions/claims-integrity'
+    | '/solutions/fleet-maintenance'
+    | '/solutions/home-installation'
+    | '/about'
+    | '/blog'
+    | '/careers'
+    | '/contact'
+    | '/customers'
+    | '/demos'
+    | '/help'
+    | '/partners'
+    | '/demos/$slug/$appSlug'
+    | '/help/knowledge/$topic'
+    | '/demos/$slug'
+    | '/help/knowledge'
+    | '/help/knowledge/guide/$slug'
+  id:
+    | '__root__'
+    | '/'
+    | '/blog/$slug'
+    | '/careers/$slug'
+    | '/contact/sales'
+    | '/customers/$slug'
+    | '/legal/privacy-policy'
+    | '/legal/terms'
+    | '/partners/$slug'
+    | '/solutions/claims-integrity'
+    | '/solutions/fleet-maintenance'
+    | '/solutions/home-installation'
+    | '/about/'
+    | '/blog/'
+    | '/careers/'
+    | '/contact/'
+    | '/customers/'
+    | '/demos/'
+    | '/help/'
+    | '/partners/'
+    | '/demos/$slug/$appSlug'
+    | '/help/knowledge/$topic'
+    | '/demos/$slug/'
+    | '/help/knowledge/'
+    | '/help/knowledge/guide/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  CareersSlugRoute: typeof CareersSlugRoute
+  ContactSalesRoute: typeof ContactSalesRoute
+  CustomersSlugRoute: typeof CustomersSlugRoute
+  LegalPrivacyPolicyRoute: typeof LegalPrivacyPolicyRoute
+  LegalTermsRoute: typeof LegalTermsRoute
+  PartnersSlugRoute: typeof PartnersSlugRoute
+  SolutionsClaimsIntegrityRoute: typeof SolutionsClaimsIntegrityRoute
+  SolutionsFleetMaintenanceRoute: typeof SolutionsFleetMaintenanceRoute
+  SolutionsHomeInstallationRoute: typeof SolutionsHomeInstallationRoute
+  AboutIndexRoute: typeof AboutIndexRoute
+  BlogIndexRoute: typeof BlogIndexRoute
+  CareersIndexRoute: typeof CareersIndexRoute
+  ContactIndexRoute: typeof ContactIndexRoute
+  CustomersIndexRoute: typeof CustomersIndexRoute
+  DemosIndexRoute: typeof DemosIndexRoute
+  HelpIndexRoute: typeof HelpIndexRoute
+  PartnersIndexRoute: typeof PartnersIndexRoute
+  DemosSlugAppSlugRoute: typeof DemosSlugAppSlugRoute
+  HelpKnowledgeTopicRoute: typeof HelpKnowledgeTopicRoute
+  DemosSlugIndexRoute: typeof DemosSlugIndexRoute
+  HelpKnowledgeIndexRoute: typeof HelpKnowledgeIndexRoute
+  HelpKnowledgeGuideSlugRoute: typeof HelpKnowledgeGuideSlugRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +354,195 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/partners/': {
+      id: '/partners/'
+      path: '/partners'
+      fullPath: '/partners/'
+      preLoaderRoute: typeof PartnersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/': {
+      id: '/help/'
+      path: '/help'
+      fullPath: '/help/'
+      preLoaderRoute: typeof HelpIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demos/': {
+      id: '/demos/'
+      path: '/demos'
+      fullPath: '/demos/'
+      preLoaderRoute: typeof DemosIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customers/': {
+      id: '/customers/'
+      path: '/customers'
+      fullPath: '/customers/'
+      preLoaderRoute: typeof CustomersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact/': {
+      id: '/contact/'
+      path: '/contact'
+      fullPath: '/contact/'
+      preLoaderRoute: typeof ContactIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers/': {
+      id: '/careers/'
+      path: '/careers'
+      fullPath: '/careers/'
+      preLoaderRoute: typeof CareersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about/': {
+      id: '/about/'
+      path: '/about'
+      fullPath: '/about/'
+      preLoaderRoute: typeof AboutIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/home-installation': {
+      id: '/solutions/home-installation'
+      path: '/solutions/home-installation'
+      fullPath: '/solutions/home-installation'
+      preLoaderRoute: typeof SolutionsHomeInstallationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/fleet-maintenance': {
+      id: '/solutions/fleet-maintenance'
+      path: '/solutions/fleet-maintenance'
+      fullPath: '/solutions/fleet-maintenance'
+      preLoaderRoute: typeof SolutionsFleetMaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions/claims-integrity': {
+      id: '/solutions/claims-integrity'
+      path: '/solutions/claims-integrity'
+      fullPath: '/solutions/claims-integrity'
+      preLoaderRoute: typeof SolutionsClaimsIntegrityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners/$slug': {
+      id: '/partners/$slug'
+      path: '/partners/$slug'
+      fullPath: '/partners/$slug'
+      preLoaderRoute: typeof PartnersSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/terms': {
+      id: '/legal/terms'
+      path: '/legal/terms'
+      fullPath: '/legal/terms'
+      preLoaderRoute: typeof LegalTermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/privacy-policy': {
+      id: '/legal/privacy-policy'
+      path: '/legal/privacy-policy'
+      fullPath: '/legal/privacy-policy'
+      preLoaderRoute: typeof LegalPrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customers/$slug': {
+      id: '/customers/$slug'
+      path: '/customers/$slug'
+      fullPath: '/customers/$slug'
+      preLoaderRoute: typeof CustomersSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact/sales': {
+      id: '/contact/sales'
+      path: '/contact/sales'
+      fullPath: '/contact/sales'
+      preLoaderRoute: typeof ContactSalesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers/$slug': {
+      id: '/careers/$slug'
+      path: '/careers/$slug'
+      fullPath: '/careers/$slug'
+      preLoaderRoute: typeof CareersSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/knowledge/': {
+      id: '/help/knowledge/'
+      path: '/help/knowledge'
+      fullPath: '/help/knowledge/'
+      preLoaderRoute: typeof HelpKnowledgeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demos/$slug/': {
+      id: '/demos/$slug/'
+      path: '/demos/$slug'
+      fullPath: '/demos/$slug/'
+      preLoaderRoute: typeof DemosSlugIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/knowledge/$topic': {
+      id: '/help/knowledge/$topic'
+      path: '/help/knowledge/$topic'
+      fullPath: '/help/knowledge/$topic'
+      preLoaderRoute: typeof HelpKnowledgeTopicRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demos/$slug/$appSlug': {
+      id: '/demos/$slug/$appSlug'
+      path: '/demos/$slug/$appSlug'
+      fullPath: '/demos/$slug/$appSlug'
+      preLoaderRoute: typeof DemosSlugAppSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/help/knowledge/guide/$slug': {
+      id: '/help/knowledge/guide/$slug'
+      path: '/help/knowledge/guide/$slug'
+      fullPath: '/help/knowledge/guide/$slug'
+      preLoaderRoute: typeof HelpKnowledgeGuideSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  CareersSlugRoute: CareersSlugRoute,
+  ContactSalesRoute: ContactSalesRoute,
+  CustomersSlugRoute: CustomersSlugRoute,
+  LegalPrivacyPolicyRoute: LegalPrivacyPolicyRoute,
+  LegalTermsRoute: LegalTermsRoute,
+  PartnersSlugRoute: PartnersSlugRoute,
+  SolutionsClaimsIntegrityRoute: SolutionsClaimsIntegrityRoute,
+  SolutionsFleetMaintenanceRoute: SolutionsFleetMaintenanceRoute,
+  SolutionsHomeInstallationRoute: SolutionsHomeInstallationRoute,
+  AboutIndexRoute: AboutIndexRoute,
+  BlogIndexRoute: BlogIndexRoute,
+  CareersIndexRoute: CareersIndexRoute,
+  ContactIndexRoute: ContactIndexRoute,
+  CustomersIndexRoute: CustomersIndexRoute,
+  DemosIndexRoute: DemosIndexRoute,
+  HelpIndexRoute: HelpIndexRoute,
+  PartnersIndexRoute: PartnersIndexRoute,
+  DemosSlugAppSlugRoute: DemosSlugAppSlugRoute,
+  HelpKnowledgeTopicRoute: HelpKnowledgeTopicRoute,
+  DemosSlugIndexRoute: DemosSlugIndexRoute,
+  HelpKnowledgeIndexRoute: HelpKnowledgeIndexRoute,
+  HelpKnowledgeGuideSlugRoute: HelpKnowledgeGuideSlugRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -2,7 +2,6 @@ import { Button as BaseUiButton } from '@base-ui/react/button';
 import { createLink } from '@tanstack/react-router';
 import { tv } from 'tailwind-variants';
 import { type UIProps, base } from '@/ui/styles';
-import type { LinkComponent } from '@tanstack/react-router';
 import type { Ref } from 'react';
 import type { VariantProps } from 'tailwind-variants';
 
@@ -67,6 +66,7 @@ function BaseUiButtonLink({
   return (
     <BaseUiButton
       ref={ref}
+      nativeButton={false}
       // biome-ignore lint/a11y/useValidAnchor: render prop template (href is injected by TanStack Router's createLink)
       // biome-ignore lint/a11y/useAnchorContent: render prop template (children are injected by TanStack Router's createLink)
       render={<a />}
@@ -76,11 +76,11 @@ function BaseUiButtonLink({
   );
 }
 
-const CreatedButtonLink = createLink(BaseUiButtonLink);
+const TanStackButtonLink = createLink(BaseUiButtonLink);
 
-const ButtonLink: LinkComponent<typeof BaseUiButtonLink> = (props) => {
-  return <CreatedButtonLink preload="intent" {...props} />;
-};
+function ButtonLink(props: Parameters<typeof TanStackButtonLink>[0]) {
+  return <TanStackButtonLink preload="intent" {...props} />;
+}
 
 /**
  * @example
