@@ -5,7 +5,7 @@ import { checkControl } from '@/ui/styles';
 import type { UIProps } from '@/ui/styles';
 
 /**
- * RadioGroup
+ * Group a set of radio items into a single-selection control
  */
 type RadioGroupProps = UIProps<typeof BaseUiRadioGroup>;
 
@@ -14,7 +14,7 @@ function RadioGroup({ className, ...props }: Readonly<RadioGroupProps>) {
 }
 
 /**
- * RadioItem
+ * Render a single radio option within a RadioGroup
  */
 const radioStyles = tv({
   extend: checkControl,

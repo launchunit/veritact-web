@@ -33,6 +33,7 @@ import { Route as MarketingCareersSlugRouteImport } from './routes/_marketing/ca
 import { Route as MarketingBlogSlugRouteImport } from './routes/_marketing/blog/$slug'
 import { Route as MarketingHelpKnowledgeIndexRouteImport } from './routes/_marketing/help/knowledge/index'
 import { Route as MarketingHelpKnowledgeTopicRouteImport } from './routes/_marketing/help/knowledge/$topic'
+import { Route as MarketingHelpKnowledgeGuideIndexRouteImport } from './routes/_marketing/help/knowledge/guide/index'
 import { Route as MarketingHelpKnowledgeGuideSlugRouteImport } from './routes/_marketing/help/knowledge/guide/$slug'
 
 const MarketingRoute = MarketingRouteImport.update({
@@ -160,6 +161,12 @@ const MarketingHelpKnowledgeTopicRoute =
     path: '/help/knowledge/$topic',
     getParentRoute: () => MarketingRoute,
   } as any)
+const MarketingHelpKnowledgeGuideIndexRoute =
+  MarketingHelpKnowledgeGuideIndexRouteImport.update({
+    id: '/help/knowledge/guide/',
+    path: '/help/knowledge/guide/',
+    getParentRoute: () => MarketingRoute,
+  } as any)
 const MarketingHelpKnowledgeGuideSlugRoute =
   MarketingHelpKnowledgeGuideSlugRouteImport.update({
     id: '/help/knowledge/guide/$slug',
@@ -192,6 +199,7 @@ export interface FileRoutesByFullPath {
   '/help/knowledge/$topic': typeof MarketingHelpKnowledgeTopicRoute
   '/help/knowledge/': typeof MarketingHelpKnowledgeIndexRoute
   '/help/knowledge/guide/$slug': typeof MarketingHelpKnowledgeGuideSlugRoute
+  '/help/knowledge/guide/': typeof MarketingHelpKnowledgeGuideIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof MarketingIndexRoute
@@ -218,6 +226,7 @@ export interface FileRoutesByTo {
   '/help/knowledge/$topic': typeof MarketingHelpKnowledgeTopicRoute
   '/help/knowledge': typeof MarketingHelpKnowledgeIndexRoute
   '/help/knowledge/guide/$slug': typeof MarketingHelpKnowledgeGuideSlugRoute
+  '/help/knowledge/guide': typeof MarketingHelpKnowledgeGuideIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -246,6 +255,7 @@ export interface FileRoutesById {
   '/_marketing/help/knowledge/$topic': typeof MarketingHelpKnowledgeTopicRoute
   '/_marketing/help/knowledge/': typeof MarketingHelpKnowledgeIndexRoute
   '/_marketing/help/knowledge/guide/$slug': typeof MarketingHelpKnowledgeGuideSlugRoute
+  '/_marketing/help/knowledge/guide/': typeof MarketingHelpKnowledgeGuideIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -274,6 +284,7 @@ export interface FileRouteTypes {
     | '/help/knowledge/$topic'
     | '/help/knowledge/'
     | '/help/knowledge/guide/$slug'
+    | '/help/knowledge/guide/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -300,6 +311,7 @@ export interface FileRouteTypes {
     | '/help/knowledge/$topic'
     | '/help/knowledge'
     | '/help/knowledge/guide/$slug'
+    | '/help/knowledge/guide'
   id:
     | '__root__'
     | '/_marketing'
@@ -327,6 +339,7 @@ export interface FileRouteTypes {
     | '/_marketing/help/knowledge/$topic'
     | '/_marketing/help/knowledge/'
     | '/_marketing/help/knowledge/guide/$slug'
+    | '/_marketing/help/knowledge/guide/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -505,6 +518,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MarketingHelpKnowledgeTopicRouteImport
       parentRoute: typeof MarketingRoute
     }
+    '/_marketing/help/knowledge/guide/': {
+      id: '/_marketing/help/knowledge/guide/'
+      path: '/help/knowledge/guide'
+      fullPath: '/help/knowledge/guide/'
+      preLoaderRoute: typeof MarketingHelpKnowledgeGuideIndexRouteImport
+      parentRoute: typeof MarketingRoute
+    }
     '/_marketing/help/knowledge/guide/$slug': {
       id: '/_marketing/help/knowledge/guide/$slug'
       path: '/help/knowledge/guide/$slug'
@@ -538,6 +558,7 @@ interface MarketingRouteChildren {
   MarketingHelpKnowledgeTopicRoute: typeof MarketingHelpKnowledgeTopicRoute
   MarketingHelpKnowledgeIndexRoute: typeof MarketingHelpKnowledgeIndexRoute
   MarketingHelpKnowledgeGuideSlugRoute: typeof MarketingHelpKnowledgeGuideSlugRoute
+  MarketingHelpKnowledgeGuideIndexRoute: typeof MarketingHelpKnowledgeGuideIndexRoute
 }
 
 const MarketingRouteChildren: MarketingRouteChildren = {
@@ -566,6 +587,7 @@ const MarketingRouteChildren: MarketingRouteChildren = {
   MarketingHelpKnowledgeTopicRoute: MarketingHelpKnowledgeTopicRoute,
   MarketingHelpKnowledgeIndexRoute: MarketingHelpKnowledgeIndexRoute,
   MarketingHelpKnowledgeGuideSlugRoute: MarketingHelpKnowledgeGuideSlugRoute,
+  MarketingHelpKnowledgeGuideIndexRoute: MarketingHelpKnowledgeGuideIndexRoute,
 }
 
 const MarketingRouteWithChildren = MarketingRoute._addFileChildren(

@@ -126,6 +126,7 @@ function Page() {
 
 /* ─── Local helpers ────────────────────────────────── */
 
+/** Render a labeled form field with an optional "(Optional)" suffix */
 function Field({
   label,
   optional,
@@ -147,6 +148,7 @@ function Field({
   );
 }
 
+/** Display a social-proof stat with a description and company logo */
 function StatCard({
   stat,
   description,

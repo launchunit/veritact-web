@@ -29,7 +29,7 @@ const thumbStyles = tv({
 
 type SwitchProps = UIProps<typeof BaseUiSwitch.Root>;
 
-/** Toggle a setting on or off. Pair with a `<label>` for accessibility. */
+/** Toggle a setting on or off. Pair with a `<label>` for accessibility */
 function Switch({ className, ...props }: Readonly<SwitchProps>) {
   return (
     <BaseUiSwitch.Root className={switchStyles({ class: className })} {...props}>

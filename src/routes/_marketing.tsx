@@ -3,15 +3,13 @@ import Footer from '@/blocks/Footer';
 import Header from '@/blocks/Header';
 
 export const Route = createFileRoute('/_marketing')({
-  component: MarketingLayout,
+  component() {
+    return (
+      <>
+        <Header />
+        <Outlet />
+        <Footer />
+      </>
+    );
+  },
 });
-
-function MarketingLayout() {
-  return (
-    <>
-      <Header />
-      <Outlet />
-      <Footer />
-    </>
-  );
-}

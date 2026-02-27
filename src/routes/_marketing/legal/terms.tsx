@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { GridBand, GridSection } from '@/blocks/GridSection';
+import { ExternalLink } from '@/ui/Link';
 
 export const Route = createFileRoute('/_marketing/legal/terms')({
   component: Page,
@@ -132,10 +133,7 @@ function Page() {
 
             <p>
               If you have any questions about these Terms, please contact us at{' '}
-              <a href="mailto:legal@veritact.com" className="text-foreground underline">
-                legal@veritact.com
-              </a>
-              .
+              <ExternalLink href="mailto:legal@veritact.com">legal@veritact.com</ExternalLink>.
             </p>
           </div>
         </div>

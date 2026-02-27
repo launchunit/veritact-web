@@ -116,6 +116,7 @@ function HamburgerIcon({ open }: Readonly<{ open: boolean }>) {
   );
 }
 
+/** Render the mobile navigation drawer with solution links and CTA */
 function MobileNav() {
   const [open, setOpen] = useState(false);
 

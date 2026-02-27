@@ -44,6 +44,7 @@ const buttonVariants = tv({
 
 type ButtonProps = UIProps<typeof BaseUiButton> & VariantProps<typeof buttonVariants>;
 
+/** Resolve the button class string from variant, size, and optional overrides */
 function buttonClassName({
   variant,
   size,
@@ -57,6 +58,7 @@ function Button({ className, variant, size, ...props }: Readonly<ButtonProps>) {
   return <BaseUiButton className={buttonClassName({ variant, size, className })} {...props} />;
 }
 
+/** Render a Base UI button as an anchor element for use with TanStack Router's `createLink` */
 function BaseUiButtonLink({
   className,
   variant,

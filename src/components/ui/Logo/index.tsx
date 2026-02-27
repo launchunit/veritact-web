@@ -1,6 +1,7 @@
 import { cn } from 'tailwind-variants';
 import type { UIProps } from '../styles';
 
+/** Render the Veritact logo as an inline SVG */
 export function Logo({ className }: UIProps<'svg'>) {
   return (
     <svg

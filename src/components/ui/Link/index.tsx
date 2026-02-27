@@ -14,6 +14,7 @@ const linkStyles = tv({
   ],
 });
 
+/** Render a styled anchor element for use with TanStack Router's `createLink` */
 function BaseLink({
   className,
   ref,

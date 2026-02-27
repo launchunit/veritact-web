@@ -12,24 +12,22 @@ import { ButtonLink } from '@/ui/Button';
 
 export const Route = createFileRoute('/_marketing/')({
   ssr: true,
-  component: Page,
+  component() {
+    return (
+      <main>
+        <Hero />
+        <StandardSection />
+        <VerificationPipelineSection />
+        <ComplianceSection />
+      </main>
+    );
+  },
 });
-
-function Page() {
-  return (
-    <main>
-      <Hero />
-      <StandardsSection />
-      <VerificationPipelineSection />
-      <ComplianceSection />
-    </main>
-  );
-}
 
 function Hero() {
   return (
-    <section className="border-border flex min-h-[calc(100dvh-3.25rem)] items-start border-b lg:items-center">
-      <div className="mx-auto max-w-6xl px-4 py-16">
+    <section className="border-border min-h-[calc(100dvh-3.25rem)] border-b py-14 md:pt-18 lg:items-center">
+      <div className="mx-auto max-w-6xl px-4">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left — headline */}
           <div className="flex flex-col gap-6">
@@ -100,9 +98,16 @@ function Hero() {
               />
 
               {/* Scan line animation */}
+              <style>{`
+                @keyframes scan {
+                  0% { top: -20%; opacity: 0; }
+                  50% { opacity: 1; }
+                  100% { top: 120%; opacity: 0; }
+                }
+              `}</style>
               <div
                 aria-hidden="true"
-                className="via-primary/50 animate-scan pointer-events-none absolute inset-x-0 z-10 h-[25%] bg-gradient-to-b from-transparent to-transparent"
+                className="via-primary/50 pointer-events-none absolute inset-x-0 z-10 h-[25%] animate-[scan_3s_ease-in-out_infinite] bg-linear-to-b from-transparent to-transparent"
               />
             </div>
           </div>
@@ -112,9 +117,9 @@ function Hero() {
   );
 }
 
-function StandardsSection() {
+function StandardSection() {
   return (
-    <section className="bg-muted border-border border-b py-24">
+    <section className="bg-muted border-border border-b py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         {/* Full-width heading */}
         <h2 className="text-foreground mb-10 text-center text-3xl leading-tight text-pretty sm:text-4xl">
@@ -356,10 +361,10 @@ function StandardsSection() {
 
 function VerificationPipelineSection() {
   return (
-    <section className="bg-background border-border border-b py-24">
+    <section className="bg-background border-border border-b py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         {/* Hero-style row: video left, heading right */}
-        <div className="mb-10 grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left — Video */}
           <div className="border-border/60 bg-background order-2 flex flex-col rounded-2xl border shadow-sm lg:order-0">
             {/* Video player mockup */}
@@ -444,9 +449,9 @@ function VerificationPipelineSection() {
 
 function ComplianceSection() {
   return (
-    <section className="bg-muted border-border border-b py-24">
+    <section className="bg-muted border-border border-b py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
-        <div className="mb-10 text-center">
+        <div className="text-center">
           <div className="border-primary/30 bg-primary/10 text-primary mx-auto mb-6 inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wider uppercase">
             Compliance & Warranty
           </div>
@@ -459,7 +464,7 @@ function ComplianceSection() {
           </p>
         </div>
 
-        <div className="border-border/60 bg-background mx-auto max-w-2xl overflow-hidden rounded-2xl border shadow-sm">
+        <div className="border-border/60 bg-background mx-auto mt-10 max-w-2xl overflow-hidden rounded-2xl border shadow-sm">
           {/* Header */}
           <div className="border-border flex items-center justify-between border-b px-6 py-4">
             <span className="text-foreground flex items-center gap-2 text-sm font-bold">

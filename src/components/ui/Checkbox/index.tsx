@@ -5,7 +5,7 @@ import { checkControl } from '@/ui/styles';
 import type { UIProps } from '@/ui/styles';
 
 /**
- * CheckboxGroup
+ * Group a set of related checkboxes with shared state and layout
  */
 type CheckboxGroupProps = UIProps<typeof BaseUiCheckboxGroup>;
 
@@ -14,7 +14,7 @@ function CheckboxGroup({ className, ...props }: Readonly<CheckboxGroupProps>) {
 }
 
 /**
- * Checkbox
+ * Render a checkbox input that support checked, unchecked, and indeterminate states
  */
 const checkboxStyles = tv({
   extend: checkControl,

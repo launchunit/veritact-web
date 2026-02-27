@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { GridBand, GridSection } from '@/blocks/GridSection';
+import { ExternalLink } from '@/ui/Link';
 
 export const Route = createFileRoute('/_marketing/legal/privacy-policy')({
   component: Page,
@@ -146,10 +147,7 @@ function Page() {
 
             <p>
               If you have any questions about this Privacy Policy, please contact us at{' '}
-              <a href="mailto:privacy@veritact.com" className="text-foreground underline">
-                privacy@veritact.com
-              </a>
-              .
+              <ExternalLink href="mailto:privacy@veritact.com">privacy@veritact.com</ExternalLink>.
             </p>
           </div>
         </div>
