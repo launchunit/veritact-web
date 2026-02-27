@@ -40,15 +40,15 @@ function Switch({ className, ...props }: Readonly<SwitchProps>) {
 
 /**
  * @example
- * <label className="flex items-center gap-2">
+ * <label className="flex cursor-pointer items-center gap-2">
  *   <Switch /> Notifications
  * </label>
  *
- * <label className="flex items-center gap-2">
+ * <label className="flex cursor-pointer items-center gap-2">
  *   <Switch defaultChecked /> Dark mode
  * </label>
  *
- * <label className="flex items-center gap-2">
+ * <label className="flex cursor-pointer items-center gap-2">
  *   <Switch disabled /> Unavailable
  * </label>
  */

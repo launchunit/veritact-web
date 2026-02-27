@@ -1,0 +1,28 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/inter';
+
+@theme {
+  --color-background: oklch(95.82% 0.0152 90.24);
+  --color-foreground: #004e89;
+
+  --color-primary: #ff6b35; /* vivid-vermilion */
+  --color-primary-foreground: #004e89;
+
+  --color-secondary: #004e89; /* vivid-prussian */
+
+  --color-accent: #1a1f2e; /* dark-navy */
+}
+
+@layer base {
+  /* To debug */
+  /* * {
+    @apply outline-dashed outline-red-400;
+  } */
+  html {
+    color-scheme: light;
+    @apply bg-background text-foreground scroll-smooth font-sans antialiased;
+  }
+  body {
+    @apply mx-auto min-h-screen w-full;
+  }
+}

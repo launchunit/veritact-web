@@ -7,13 +7,13 @@ const meta = {
   args: { onValueChange: fn() },
   render: (args) => (
     <RadioGroup {...args}>
-      <label className="flex items-center gap-2">
+      <label className="flex cursor-pointer items-center gap-2">
         <RadioItem value="option-a" /> Option A
       </label>
-      <label className="flex items-center gap-2">
+      <label className="flex cursor-pointer items-center gap-2">
         <RadioItem value="option-b" /> Option B
       </label>
-      <label className="flex items-center gap-2">
+      <label className="flex cursor-pointer items-center gap-2">
         <RadioItem value="option-c" /> Option C
       </label>
     </RadioGroup>

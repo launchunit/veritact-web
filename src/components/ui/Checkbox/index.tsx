@@ -70,15 +70,15 @@ function Checkbox({ className, ...props }: Readonly<CheckboxProps>) {
  * <Checkbox disabled />
  * <Checkbox indeterminate />
  *
- * <label className="flex items-center gap-2">
+ * <label className="flex cursor-pointer items-center gap-2">
  *   <Checkbox /> Accept terms
  * </label>
  *
  * <CheckboxGroup defaultValue={["a"]}>
- *   <label className="flex items-center gap-2">
+ *   <label className="flex cursor-pointer items-center gap-2">
  *     <Checkbox value="a" /> Option A
  *   </label>
- *   <label className="flex items-center gap-2">
+ *   <label className="flex cursor-pointer items-center gap-2">
  *     <Checkbox value="b" /> Option B
  *   </label>
  * </CheckboxGroup>

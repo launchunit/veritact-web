@@ -7,7 +7,7 @@
     "paths": {
       "@/config/*": ["./src/config/*"],
       "@/routes/*": ["./src/routes/*"],
-      "@/styles.css": ["./src/styles.css"],
+      "@/styles.css": ["./src/styles-2.css"],
       "@/ui/*": ["./src/components/ui/*"],
       "@/blocks/*": ["./src/components/blocks/*"]
     }

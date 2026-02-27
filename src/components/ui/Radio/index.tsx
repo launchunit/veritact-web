@@ -34,10 +34,10 @@ function RadioItem({ className, ...props }: Readonly<RadioItemProps>) {
 /**
  * @example
  * <RadioGroup defaultValue="a">
- *   <label className="flex items-center gap-2">
+ *   <label className="flex cursor-pointer items-center gap-2">
  *     <RadioItem value="a" /> Option A
  *   </label>
- *   <label className="flex items-center gap-2">
+ *   <label className="flex cursor-pointer items-center gap-2">
  *     <RadioItem value="b" /> Option B
  *   </label>
  * </RadioGroup>
