@@ -144,7 +144,7 @@ function Field({
       </span>
       {children}
     </label>
-  )
+  );
 }
 
 function StatCard({

@@ -16,11 +16,7 @@ export default function NotFound() {
         </div>
 
         <div className="relative mt-12 w-full lg:mt-0 lg:w-1/2">
-          <img
-            className="w-full max-w-lg lg:mx-auto"
-            src="/illustrations/not-found.svg"
-            alt="404 illustration"
-          />
+          <img className="w-full max-w-lg lg:mx-auto" src="/not-found.svg" alt="404 illustration" />
         </div>
       </div>
     </section>

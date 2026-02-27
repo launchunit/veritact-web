@@ -36,6 +36,23 @@
 
   /* Shadow color */
   --shadow-color: hsl(28 13% 20%);
+
+  /* Custom animations */
+  --animate-scan: scan 3s ease-in-out infinite;
+}
+
+@keyframes scan {
+  0% {
+    top: -20%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: 120%;
+    opacity: 0;
+  }
 }
 
 @layer base {
@@ -45,9 +62,9 @@
   } */
   html {
     color-scheme: light;
-    @apply scroll-smooth bg-background font-sans antialiased text-foreground;
+    @apply bg-background text-foreground scroll-smooth font-sans antialiased;
   }
   body {
-    @apply min-h-screen w-full mx-auto;
+    @apply mx-auto min-h-screen w-full;
   }
 }

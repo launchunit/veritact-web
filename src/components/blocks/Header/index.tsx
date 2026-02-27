@@ -27,11 +27,7 @@ export default function Header() {
               {s.label}
             </Link>
           ))}
-          <div
-            role="separator"
-            aria-orientation="vertical"
-            className="bg-border mr-4 h-4 w-px shrink-0"
-          />
+          <div className="bg-border mr-4 h-4 w-px shrink-0" />
           <ButtonLink to="/contact/sales" size="sm">
             Book a Demo
           </ButtonLink>
