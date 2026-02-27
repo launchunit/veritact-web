@@ -10,8 +10,6 @@ import {
 } from '@tabler/icons-react';
 import { createFileRoute } from '@tanstack/react-router';
 import { ButtonLink } from '@/ui/Button';
-import { Link } from '@/ui/Link';
-import { Logo } from '@/ui/Logo';
 
 export const Route = createFileRoute('/_marketing/')({
   ssr: true,
@@ -24,14 +22,14 @@ function Page() {
       <Hero />
       <SolutionSection />
       <VerificationPipelineSection />
-      <DirectorySection />
+      <ComplianceSection />
     </main>
   );
 }
 
 function Hero() {
   return (
-    <section className="flex min-h-[calc(100dvh-3.25rem)] items-center">
+    <section className="border-border flex min-h-[calc(100dvh-3.25rem)] items-center border-b">
       <div className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left — headline */}
@@ -44,7 +42,7 @@ function Hero() {
               Frontier Physical Vision AI
             </div>
 
-            <h1 className="text-foreground text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-foreground text-4xl leading-tight text-pretty sm:text-5xl lg:text-6xl">
               Operational verification layer for <span className="text-primary">physical work</span>
             </h1>
 
@@ -54,7 +52,7 @@ function Hero() {
             </p>
 
             <ButtonLink to="/contact/sales" size="lg">
-              <IconCalendarEvent className="size-5" />
+              <IconCalendarEvent className="size-5" aria-hidden="true" />
               Book a Demo
             </ButtonLink>
           </div>
@@ -69,7 +67,7 @@ function Hero() {
                   PRECISION: 99.8%
                 </div>
                 <div className="flex items-center gap-1 rounded border border-green-600 bg-green-50/90 px-2 py-1 font-mono text-xs font-semibold text-green-700 backdrop-blur">
-                  <IconCircleCheckFilled className="size-3.5" />
+                  <IconCircleCheckFilled className="size-3.5" aria-hidden="true" />
                   VERIFIED
                 </div>
               </div>
@@ -117,10 +115,10 @@ function Hero() {
 
 function SolutionSection() {
   return (
-    <section className="bg-muted py-16">
+    <section className="bg-muted border-border border-b py-24">
       <div className="mx-auto max-w-6xl px-4">
         {/* Full-width heading */}
-        <h2 className="text-foreground mb-10 text-center text-4xl leading-tight sm:text-5xl">
+        <h2 className="text-foreground mb-10 text-center text-3xl leading-tight text-pretty sm:text-4xl">
           Converting decades of experience into a{' '}
           <span className="text-primary">repeatable standard</span>
         </h2>
@@ -183,6 +181,7 @@ function SolutionSection() {
                     <img
                       src="/landing-page/hero-hose-connection.png"
                       alt="Close-up of water hose connection during washer installation"
+                      loading="lazy"
                       className="size-full object-cover"
                     />
 
@@ -198,7 +197,7 @@ function SolutionSection() {
                           </div>
                         </div>
                         <div className="border-primary bg-background/90 text-primary rounded border px-2 py-1 font-mono text-xs font-semibold backdrop-blur">
-                          Scanning...
+                          Scanning…
                         </div>
                       </div>
 
@@ -207,12 +206,12 @@ function SolutionSection() {
                         <div className="border-primary absolute top-0 right-0 -mt-1 -mr-1 h-3 w-3 border-t-2 border-r-2" />
                         <div className="border-primary absolute bottom-0 left-0 -mb-1 -ml-1 h-3 w-3 border-b-2 border-l-2" />
                         <div className="border-primary absolute right-0 bottom-0 -mr-1 -mb-1 h-3 w-3 border-r-2 border-b-2" />
-                        <IconFocusCentered className="text-primary/50 size-9" />
+                        <IconFocusCentered className="text-primary/50 size-9" aria-hidden="true" />
                       </div>
 
                       <div className="bg-background/90 flex items-center gap-3 rounded-lg p-3 shadow-lg backdrop-blur">
                         <div className="flex-1">
-                          <div className="text-muted-foreground mb-1.5 flex justify-between text-xs">
+                          <div className="text-muted-foreground mb-1.5 flex justify-between text-xs font-semibold">
                             <span>Step 3 of 8</span>
                             <span>34% Complete</span>
                           </div>
@@ -222,8 +221,8 @@ function SolutionSection() {
                         </div>
                         <div className="bg-border h-8 w-px shrink-0" />
                         <div className="flex shrink-0 items-center gap-1">
-                          <IconVolume className="text-primary size-4" />
-                          <span className="text-primary text-[10px] font-semibold tracking-wide uppercase">
+                          <IconVolume className="text-primary size-4" aria-hidden="true" />
+                          <span className="text-primary text-[10px] font-bold tracking-wide uppercase">
                             AI Voice
                           </span>
                         </div>
@@ -255,7 +254,7 @@ function SolutionSection() {
             <div className="border-border bg-background flex flex-1 flex-col gap-4 rounded-2xl border p-6 shadow-sm">
               <div className="flex items-center gap-2">
                 <div className="flex size-8 items-center justify-center rounded-lg bg-red-100">
-                  <IconTrendingDown className="size-4 text-red-500" />
+                  <IconTrendingDown className="size-4 text-red-500" aria-hidden="true" />
                 </div>
                 <p className="text-foreground text-xs font-bold tracking-widest uppercase">
                   The Cost of Blind Spots
@@ -360,17 +359,18 @@ function SolutionSection() {
 
 function VerificationPipelineSection() {
   return (
-    <section className="bg-background py-16">
+    <section className="bg-background border-border border-b py-24">
       <div className="mx-auto max-w-6xl px-4">
         {/* Hero-style row: video left, heading right */}
         <div className="mb-10 grid items-center gap-12 lg:grid-cols-2">
           {/* Left — Video */}
-          <div className="border-border bg-background flex flex-col rounded-2xl border shadow-sm">
+          <div className="border-border bg-background order-2 flex flex-col rounded-2xl border shadow-sm lg:order-none">
             {/* Video player mockup */}
             <div className="relative overflow-hidden rounded-t-2xl">
               <img
                 src="/landing-page/hero-washer-install.png"
                 alt="Technician POV of washing machine installation with AR verification overlay"
+                loading="lazy"
                 className="aspect-video w-full object-cover"
               />
               {/* Video controls overlay */}
@@ -393,7 +393,7 @@ function VerificationPipelineSection() {
             <div className="divide-border flex flex-1 flex-col gap-0 divide-y p-0">
               <div className="bg-primary/5 border-primary/20 border-l-2 px-5 py-4">
                 <div className="text-primary mb-1 flex items-center gap-2 font-mono text-xs font-semibold">
-                  <IconCircleCheckFilled className="size-3.5" />
+                  <IconCircleCheckFilled className="size-3.5" aria-hidden="true" />
                   00:42.1 — 00:44.8
                 </div>
                 <p className="text-foreground text-sm">
@@ -430,7 +430,7 @@ function VerificationPipelineSection() {
               The Verification Pipeline
             </div>
 
-            <h2 className="text-foreground text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            <h2 className="text-foreground text-3xl leading-tight text-pretty sm:text-4xl">
               Our Multimodal AI understands everything.{' '}
               <span className="text-primary">Find anything.</span>
             </h2>
@@ -441,151 +441,116 @@ function VerificationPipelineSection() {
             </p>
           </div>
         </div>
-
-        {/* Bento cards below */}
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="flex flex-col gap-6">
-            {/* Instant Documentation */}
-            <div className="border-border bg-background flex flex-col rounded-2xl border p-6 shadow-sm">
-              <p className="text-foreground mb-2 text-sm font-bold tracking-widest uppercase">
-                Instant Documentation
-              </p>
-              <p className="text-muted-foreground mb-6 text-lg">
-                Automated generation of audit-proof compliance logs for warranty protection.
-              </p>
-
-              <div className="border-border overflow-hidden rounded-xl border">
-                <div className="border-border bg-muted flex items-center justify-between border-b px-4 py-3">
-                  <span className="text-foreground flex items-center gap-2 text-sm font-bold">
-                    <IconFileText className="text-muted-foreground size-4" />
-                    Washer Install #4401
-                  </span>
-                  <div className="flex gap-2">
-                    <span className="rounded border border-green-600 px-2 py-0.5 text-[10px] font-medium text-green-700">
-                      PASSED
-                    </span>
-                    <span className="border-border text-muted-foreground rounded border px-2 py-0.5 text-[10px] font-medium">
-                      IMMUTABLE
-                    </span>
-                  </div>
-                </div>
-
-                <div className="divide-border divide-y font-mono text-xs">
-                  <div className="flex items-center gap-3 px-4 py-3">
-                    <IconCheck className="size-3.5 text-green-700" />
-                    <span className="text-muted-foreground w-20 shrink-0">09:41 AM</span>
-                    <span className="text-foreground">Pre-Check</span>
-                    <span className="text-muted-foreground ml-auto">99.97%</span>
-                  </div>
-                  <div className="flex items-center gap-3 px-4 py-3">
-                    <IconCheck className="size-3.5 text-green-700" />
-                    <span className="text-muted-foreground w-20 shrink-0">09:55 AM</span>
-                    <span className="text-foreground">Leveling_Adjustment</span>
-                    <span className="text-muted-foreground ml-auto">99.92%</span>
-                  </div>
-                  <div className="flex items-center gap-3 px-4 py-3">
-                    <IconCheck className="size-3.5 text-green-700" />
-                    <span className="text-muted-foreground w-20 shrink-0">10:12 AM</span>
-                    <span className="text-foreground">Water_Inlet_Connect</span>
-                    <span className="text-muted-foreground ml-auto">99.85%</span>
-                  </div>
-                  <div className="flex items-center gap-3 bg-red-50 px-4 py-3">
-                    <IconX className="size-3.5 text-red-600" />
-                    <span className="text-muted-foreground w-20 shrink-0">10:18 AM</span>
-                    <span className="text-foreground">Drain_Hose_Seal</span>
-                    <span className="ml-auto text-red-600">41.20%</span>
-                  </div>
-                  <div className="flex items-center gap-3 px-4 py-3">
-                    <IconCheck className="size-3.5 text-green-700" />
-                    <span className="text-muted-foreground w-20 shrink-0">10:19 AM</span>
-                    <span className="text-foreground">Drain_Hose_Seal (Retry)</span>
-                    <span className="text-muted-foreground ml-auto">99.98%</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Process & Compliance                                                      */
+/*  Compliance & Warranty                                                     */
 /* -------------------------------------------------------------------------- */
 
-/* -------------------------------------------------------------------------- */
-/*  Directory (original links section)                                        */
-/* -------------------------------------------------------------------------- */
-
-const sections = [
-  {
-    title: 'Solutions',
-    links: [
-      { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
-      { to: '/solutions/fleet-maintenance', label: 'Fleet Maintenance' },
-      { to: '/solutions/home-installation', label: 'Home Installation' },
-    ],
-  },
-  {
-    title: 'Company',
-    links: [
-      { to: '/about', label: 'About' },
-      { to: '/careers', label: 'Careers' },
-      { to: '/partners', label: 'Partners' },
-      { to: '/customers', label: 'Customers' },
-    ],
-  },
-  {
-    title: 'Resources',
-    links: [
-      { to: '/blog', label: 'Blog' },
-      { to: '/demos', label: 'Demos' },
-      { to: '/help', label: 'Help Center' },
-      { to: '/help/knowledge', label: 'Knowledge Base' },
-    ],
-  },
-  {
-    title: 'Contact',
-    links: [
-      { to: '/contact', label: 'Contact' },
-      { to: '/contact/sales', label: 'Contact Sales' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { to: '/legal/terms', label: 'Terms' },
-      { to: '/legal/privacy-policy', label: 'Privacy Policy' },
-    ],
-  },
-] as const;
-
-function DirectorySection() {
+function ComplianceSection() {
   return (
-    <div className="bg-background">
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <div className="mb-12 text-center">
-          <Logo className="text-primary mx-auto h-20" />
+    <section className="bg-muted border-border border-b py-24">
+      <div className="mx-auto max-w-6xl px-4">
+        <div className="mb-10 text-center">
+          <div className="border-primary/30 bg-primary/10 text-primary mx-auto mb-6 inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wider uppercase">
+            Compliance & Warranty
+          </div>
+          <h2 className="text-foreground text-3xl leading-tight text-pretty sm:text-4xl">
+            Instant documentation. <span className="text-primary">Audit-proof by default.</span>
+          </h2>
+          <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-lg">
+            Every action is automatically logged into tamper-proof compliance records for warranty
+            protection.
+          </p>
         </div>
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {sections.map((section) => (
-            <div key={section.title}>
-              <h2 className="text-foreground mb-3 text-sm font-semibold tracking-wider uppercase">
-                {section.title}
-              </h2>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.to}>
-                    <Link to={link.to}>{link.label}</Link>
-                  </li>
-                ))}
-              </ul>
+
+        <div className="border-border bg-background mx-auto max-w-2xl overflow-hidden rounded-2xl border shadow-sm">
+          {/* Header */}
+          <div className="border-border flex items-center justify-between border-b px-6 py-4">
+            <span className="text-foreground flex items-center gap-2 text-sm font-bold">
+              <IconFileText className="text-muted-foreground size-4" aria-hidden="true" />
+              Compliance Log #8821-X
+            </span>
+            <div className="flex gap-2">
+              <span className="rounded border border-green-600 px-2 py-0.5 text-[10px] font-medium text-green-700">
+                PASSED
+              </span>
+              <span className="border-border text-muted-foreground rounded border px-2 py-0.5 text-[10px] font-medium">
+                IMMUTABLE
+              </span>
             </div>
-          ))}
+          </div>
+
+          {/* Table */}
+          <table className="w-full font-mono text-xs">
+            <thead>
+              <tr className="border-border border-b">
+                <th className="text-muted-foreground px-6 py-3 text-left text-[10px] font-semibold tracking-widest uppercase">
+                  Timestamp
+                </th>
+                <th className="text-muted-foreground px-6 py-3 text-left text-[10px] font-semibold tracking-widest uppercase">
+                  Action
+                </th>
+                <th className="text-muted-foreground px-6 py-3 text-right text-[10px] font-semibold tracking-widest uppercase">
+                  Score
+                </th>
+                <th className="text-muted-foreground px-6 py-3 text-right text-[10px] font-semibold tracking-widest uppercase">
+                  Status
+                </th>
+              </tr>
+            </thead>
+            <tbody className="divide-border divide-y">
+              <tr>
+                <td className="text-muted-foreground px-6 py-4">10:42:05 AM</td>
+                <td className="text-foreground px-6 py-4">Level_Check_Horizontal</td>
+                <td className="text-muted-foreground px-6 py-4 text-right">99.92%</td>
+                <td className="px-6 py-4 text-right">
+                  <span className="inline-flex items-center gap-1 text-green-700">
+                    <IconCheck className="size-3.5" aria-hidden="true" />
+                    OK
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td className="text-muted-foreground px-6 py-4">10:43:12 AM</td>
+                <td className="text-foreground px-6 py-4">Cold_Water_Inlet_Tight</td>
+                <td className="text-muted-foreground px-6 py-4 text-right">99.85%</td>
+                <td className="px-6 py-4 text-right">
+                  <span className="inline-flex items-center gap-1 text-green-700">
+                    <IconCheck className="size-3.5" aria-hidden="true" />
+                    OK
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td className="text-muted-foreground px-6 py-4">10:44:01 AM</td>
+                <td className="text-foreground px-6 py-4">Drain_Hose_Height</td>
+                <td className="px-6 py-4 text-right text-red-600">42.10%</td>
+                <td className="px-6 py-4 text-right">
+                  <span className="inline-flex items-center gap-1 text-red-600">
+                    <IconX className="size-3.5" aria-hidden="true" />
+                    RETRY
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td className="text-muted-foreground px-6 py-4">10:44:45 AM</td>
+                <td className="text-foreground px-6 py-4">Drain_Hose_Height</td>
+                <td className="text-muted-foreground px-6 py-4 text-right">99.98%</td>
+                <td className="px-6 py-4 text-right">
+                  <span className="inline-flex items-center gap-1 text-green-700">
+                    <IconCheck className="size-3.5" aria-hidden="true" />
+                    OK
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

@@ -23,6 +23,7 @@ const buttonVariants = tv({
         'border-destructive bg-destructive text-destructive-foreground hover:not-data-disabled:border-destructive/90 hover:not-data-disabled:bg-destructive/90 border',
       outline:
         'border-border bg-background hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground border',
+      ghost: 'hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground',
       secondary:
         'border-secondary bg-secondary text-secondary-foreground hover:not-data-disabled:border-secondary/80 hover:not-data-disabled:bg-secondary/80 border',
       link: 'text-primary border-transparent bg-transparent px-0.5 py-0 font-normal hover:not-data-disabled:underline hover:not-data-disabled:underline-offset-2',
