@@ -1,5 +1,5 @@
 import { Button as BaseUiButton } from '@base-ui/react/button';
-import { createLink } from '@tanstack/react-router';
+import { type LinkComponent, createLink } from '@tanstack/react-router';
 import { tv } from 'tailwind-variants';
 import { type UIProps, base } from '@/ui/styles';
 import type { Ref } from 'react';
@@ -13,7 +13,7 @@ const buttonVariants = tv({
     'active:not-data-disabled:scale-[0.96]', // Scale down on click
     // Also show outline on mouse click (not just keyboard)
     // 'focus:outline focus:outline-2 focus:outline-offset-2 focus:outline-ring',
-    'rounded-md font-medium', // Design styles
+    'font-medium', // Design styles
   ],
   variants: {
     variant: {
@@ -25,12 +25,12 @@ const buttonVariants = tv({
         'border-border bg-background hover:not-data-disabled:bg-accent hover:not-data-disabled:text-accent-foreground border',
       secondary:
         'border-secondary bg-secondary text-secondary-foreground hover:not-data-disabled:border-secondary/80 hover:not-data-disabled:bg-secondary/80 border',
-      link: 'text-primary rounded-sm border-transparent bg-transparent px-0.5 py-0 font-normal hover:not-data-disabled:underline hover:not-data-disabled:underline-offset-2',
+      link: 'text-primary border-transparent bg-transparent px-0.5 py-0 font-normal hover:not-data-disabled:underline hover:not-data-disabled:underline-offset-2',
     },
     size: {
-      default: 'h-10 px-4 py-2',
-      sm: 'h-9 px-3',
-      lg: 'h-11 px-8',
+      default: 'h-10 rounded-md px-4 py-2',
+      sm: 'h-9 rounded-sm px-3',
+      lg: 'h-11 rounded-lg px-8',
       icon: 'size-10',
       none: '',
     },
@@ -78,9 +78,9 @@ function BaseUiButtonLink({
 
 const TanStackButtonLink = createLink(BaseUiButtonLink);
 
-function ButtonLink(props: Parameters<typeof TanStackButtonLink>[0]) {
+const ButtonLink: LinkComponent<typeof BaseUiButtonLink> = function (props) {
   return <TanStackButtonLink preload="intent" {...props} />;
-}
+};
 
 /**
  * @example

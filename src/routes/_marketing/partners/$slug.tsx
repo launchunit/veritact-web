@@ -1,0 +1,14 @@
+import { createFileRoute } from '@tanstack/react-router';
+
+export const Route = createFileRoute('/_marketing/partners/$slug')({
+  component: Page,
+});
+
+function Page() {
+  const { slug } = Route.useParams();
+  return (
+    <div>
+      <h1>Partner: {slug}</h1>
+    </div>
+  );
+}
