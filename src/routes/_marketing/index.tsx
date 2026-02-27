@@ -3,7 +3,6 @@ import {
   IconCheck,
   IconCircleCheckFilled,
   IconFileText,
-  IconFocusCentered,
   IconTrendingDown,
   IconVolume,
   IconX,
@@ -20,7 +19,7 @@ function Page() {
   return (
     <main>
       <Hero />
-      <SolutionSection />
+      <StandardsSection />
       <VerificationPipelineSection />
       <ComplianceSection />
     </main>
@@ -29,7 +28,7 @@ function Page() {
 
 function Hero() {
   return (
-    <section className="border-border flex min-h-[calc(100dvh-3.25rem)] items-center border-b">
+    <section className="border-border flex min-h-[calc(100dvh-3.25rem)] items-start border-b lg:items-center">
       <div className="mx-auto max-w-6xl px-4 py-16">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left — headline */}
@@ -113,7 +112,7 @@ function Hero() {
   );
 }
 
-function SolutionSection() {
+function StandardsSection() {
   return (
     <section className="bg-muted border-border border-b py-24">
       <div className="mx-auto max-w-6xl px-4">
@@ -128,13 +127,13 @@ function SolutionSection() {
           {/* Left — two stacked cards */}
           <div className="flex flex-col gap-4 lg:col-span-6">
             {/* Card 1 — Guided AR Workflows */}
-            <div className="border-border bg-background flex flex-col rounded-2xl border p-6 shadow-sm">
+            <div className="border-border/60 bg-background flex flex-col rounded-2xl border p-6 shadow-sm">
               <p className="text-foreground mb-5 text-sm font-bold tracking-widest uppercase">
                 Guided AR Workflows
               </p>
               <div className="mb-6 flex flex-col gap-6">
                 <div className="flex gap-3">
-                  <div className="border-border text-muted-foreground mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium">
+                  <div className="border-primary/30 bg-primary/10 text-primary mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold">
                     1
                   </div>
                   <div>
@@ -148,7 +147,7 @@ function SolutionSection() {
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <div className="border-border text-muted-foreground mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-medium">
+                  <div className="border-primary/30 bg-primary/10 text-primary mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold">
                     2
                   </div>
                   <div>
@@ -177,7 +176,7 @@ function SolutionSection() {
                   </div>
 
                   {/* Mockup body */}
-                  <div className="relative aspect-[4/3]">
+                  <div className="relative aspect-4/3">
                     <img
                       src="/landing-page/hero-hose-connection.png"
                       alt="Close-up of water hose connection during washer installation"
@@ -201,13 +200,13 @@ function SolutionSection() {
                         </div>
                       </div>
 
-                      <div className="border-primary absolute top-1/2 left-1/2 flex size-48 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-lg border-2">
+                      {/* <div className="border-primary absolute top-1/2 left-1/2 flex size-48 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-lg border-2">
                         <div className="border-primary absolute top-0 left-0 -mt-1 -ml-1 h-3 w-3 border-t-2 border-l-2" />
                         <div className="border-primary absolute top-0 right-0 -mt-1 -mr-1 h-3 w-3 border-t-2 border-r-2" />
                         <div className="border-primary absolute bottom-0 left-0 -mb-1 -ml-1 h-3 w-3 border-b-2 border-l-2" />
                         <div className="border-primary absolute right-0 bottom-0 -mr-1 -mb-1 h-3 w-3 border-r-2 border-b-2" />
                         <IconFocusCentered className="text-primary/50 size-9" aria-hidden="true" />
-                      </div>
+                      </div> */}
 
                       <div className="bg-background/90 flex items-center gap-3 rounded-lg p-3 shadow-lg backdrop-blur">
                         <div className="flex-1">
@@ -237,7 +236,7 @@ function SolutionSection() {
           {/* Right — 3 stacked cards */}
           <div className="flex flex-col gap-4 lg:col-span-4">
             {/* Card 1 — Avg Rework Cost */}
-            <div className="border-border bg-background flex flex-col gap-3 rounded-2xl border p-6 shadow-sm">
+            <div className="border-border/60 bg-background flex flex-col gap-3 rounded-2xl border p-6 shadow-sm">
               <p className="text-foreground text-sm font-bold tracking-widest uppercase">
                 Avg Rework Cost
               </p>
@@ -251,12 +250,12 @@ function SolutionSection() {
             </div>
 
             {/* Card 2 — The Cost of Blind Spots */}
-            <div className="border-border bg-background flex flex-1 flex-col gap-4 rounded-2xl border p-6 shadow-sm">
+            <div className="border-border/60 bg-background flex flex-1 flex-col gap-4 rounded-2xl border p-6 shadow-sm">
               <div className="flex items-center gap-2">
                 <div className="flex size-8 items-center justify-center rounded-lg bg-red-100">
                   <IconTrendingDown className="size-4 text-red-500" aria-hidden="true" />
                 </div>
-                <p className="text-foreground text-xs font-bold tracking-widest uppercase">
+                <p className="text-foreground text-sm font-bold tracking-widest uppercase">
                   The Cost of Blind Spots
                 </p>
               </div>
@@ -285,10 +284,12 @@ function SolutionSection() {
             </div>
 
             {/* Card 3 — Eliminate Blind Spots */}
-            <div className="border-border bg-background flex flex-col gap-4 rounded-2xl border p-6 shadow-sm">
+            <div className="border-border/60 bg-background flex flex-col gap-4 rounded-2xl border p-6 shadow-sm">
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="text-foreground text-lg font-bold">Eliminate Blind Spots</h3>
+                  <p className="text-foreground mb-1 text-sm font-bold tracking-widest uppercase">
+                    Eliminate Blind Spots
+                  </p>
                   <p className="text-muted-foreground text-sm">SOP Adherence Coverage</p>
                 </div>
                 <span className="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700">
@@ -353,10 +354,6 @@ function SolutionSection() {
   );
 }
 
-/* -------------------------------------------------------------------------- */
-/*  Verification Pipeline                                                     */
-/* -------------------------------------------------------------------------- */
-
 function VerificationPipelineSection() {
   return (
     <section className="bg-background border-border border-b py-24">
@@ -364,7 +361,7 @@ function VerificationPipelineSection() {
         {/* Hero-style row: video left, heading right */}
         <div className="mb-10 grid items-center gap-12 lg:grid-cols-2">
           {/* Left — Video */}
-          <div className="border-border bg-background order-2 flex flex-col rounded-2xl border shadow-sm lg:order-none">
+          <div className="border-border/60 bg-background order-2 flex flex-col rounded-2xl border shadow-sm lg:order-0">
             {/* Video player mockup */}
             <div className="relative overflow-hidden rounded-t-2xl">
               <img
@@ -374,7 +371,7 @@ function VerificationPipelineSection() {
                 className="aspect-video w-full object-cover"
               />
               {/* Video controls overlay */}
-              <div className="absolute inset-x-0 bottom-0 flex items-center gap-3 bg-gradient-to-t from-black/70 to-transparent px-4 pt-10 pb-4">
+              <div className="absolute inset-x-0 bottom-0 flex items-center gap-3 bg-linear-to-t from-black/70 to-transparent px-4 pt-10 pb-4">
                 <div className="bg-primary flex size-8 items-center justify-center rounded-full">
                   <div className="ml-0.5 size-0 border-y-[5px] border-l-[8px] border-y-transparent border-l-white" />
                 </div>
@@ -385,7 +382,7 @@ function VerificationPipelineSection() {
                     </div>
                   </div>
                 </div>
-                <span className="font-mono text-[10px] text-white/80">01:24 / 03:12</span>
+                <span className="font-mono text-[10px] font-bold text-white/80">01:24 / 03:12</span>
               </div>
             </div>
 
@@ -436,8 +433,7 @@ function VerificationPipelineSection() {
             </h2>
 
             <p className="text-muted-foreground text-lg">
-              Every action is logged, scored, and sealed into a tamper-proof record — from the
-              moment work begins to the final sign-off.
+              Pinpoint precise moments to conduct investigations and manage evidence.
             </p>
           </div>
         </div>
@@ -445,10 +441,6 @@ function VerificationPipelineSection() {
     </section>
   );
 }
-
-/* -------------------------------------------------------------------------- */
-/*  Compliance & Warranty                                                     */
-/* -------------------------------------------------------------------------- */
 
 function ComplianceSection() {
   return (
@@ -467,7 +459,7 @@ function ComplianceSection() {
           </p>
         </div>
 
-        <div className="border-border bg-background mx-auto max-w-2xl overflow-hidden rounded-2xl border shadow-sm">
+        <div className="border-border/60 bg-background mx-auto max-w-2xl overflow-hidden rounded-2xl border shadow-sm">
           {/* Header */}
           <div className="border-border flex items-center justify-between border-b px-6 py-4">
             <span className="text-foreground flex items-center gap-2 text-sm font-bold">
