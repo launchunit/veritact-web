@@ -97,8 +97,8 @@ function Hero() {
               </div>
 
               <img
-                src="/landing-page/hero-technician.png"
-                alt="Technician working on industrial equipment with AR overlay"
+                src="/landing-page/hero-field-install.png"
+                alt="Field technician installing smart washing machine in modern laundry room with AR overlays"
                 className="h-auto w-full transition-transform duration-700 group-hover:scale-[1.05]"
               />
 
