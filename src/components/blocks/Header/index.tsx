@@ -108,7 +108,7 @@ function MobileNav() {
       <Drawer.Portal>
         <Drawer.Backdrop />
         <Drawer.Viewport>
-          <Drawer.Popup className="bg-background flex w-full max-w-[42rem] flex-col rounded-t-2xl px-6 pt-4 pb-6">
+          <Drawer.Popup className="bg-background flex w-full max-w-[42rem] flex-col rounded-t-2xl px-6 pt-4 pb-[calc(1.5rem+env(safe-area-inset-bottom))]">
             <div className="mb-4 grid grid-cols-[1fr_auto_1fr] items-center">
               <div aria-hidden className="size-10" />
               <div className="bg-muted-foreground/30 h-1 w-12 justify-self-center rounded-full" />
