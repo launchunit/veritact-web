@@ -10,7 +10,7 @@
     "prepare": "if [ -z \"$CI\" ]; then husky; fi",
     "clean": "rimraf -g -v \"**/{node_modules,dist,out,.cache,.vercel,*.tsbuildinfo}\"",
     "build": "TZ=UTC vite build",
-    "dev": "TZ=UTC vite --clearScreen=false",
+    "dev": "TZ=UTC vite",
     "format": "prettier --write .",
     "format:check": "prettier --check . || prettier --list-different .",
     "lint": "tsc --noEmit && biome lint",

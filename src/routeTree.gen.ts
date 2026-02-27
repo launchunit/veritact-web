@@ -29,9 +29,9 @@ import { Route as ContactSalesRouteImport } from './routes/contact/sales'
 import { Route as CareersSlugRouteImport } from './routes/careers/$slug'
 import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as HelpKnowledgeIndexRouteImport } from './routes/help/knowledge/index'
-import { Route as DemosSlugIndexRouteImport } from './routes/demos/$slug/index'
+import { Route as DemosCustomerIndexRouteImport } from './routes/demos/$customer/index'
 import { Route as HelpKnowledgeTopicRouteImport } from './routes/help/knowledge/$topic'
-import { Route as DemosSlugAppSlugRouteImport } from './routes/demos/$slug/$appSlug'
+import { Route as DemosCustomerSlugRouteImport } from './routes/demos/$customer/$slug'
 import { Route as HelpKnowledgeGuideSlugRouteImport } from './routes/help/knowledge/guide/$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -137,9 +137,9 @@ const HelpKnowledgeIndexRoute = HelpKnowledgeIndexRouteImport.update({
   path: '/help/knowledge/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemosSlugIndexRoute = DemosSlugIndexRouteImport.update({
-  id: '/demos/$slug/',
-  path: '/demos/$slug/',
+const DemosCustomerIndexRoute = DemosCustomerIndexRouteImport.update({
+  id: '/demos/$customer/',
+  path: '/demos/$customer/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HelpKnowledgeTopicRoute = HelpKnowledgeTopicRouteImport.update({
@@ -147,9 +147,9 @@ const HelpKnowledgeTopicRoute = HelpKnowledgeTopicRouteImport.update({
   path: '/help/knowledge/$topic',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DemosSlugAppSlugRoute = DemosSlugAppSlugRouteImport.update({
-  id: '/demos/$slug/$appSlug',
-  path: '/demos/$slug/$appSlug',
+const DemosCustomerSlugRoute = DemosCustomerSlugRouteImport.update({
+  id: '/demos/$customer/$slug',
+  path: '/demos/$customer/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HelpKnowledgeGuideSlugRoute = HelpKnowledgeGuideSlugRouteImport.update({
@@ -178,9 +178,9 @@ export interface FileRoutesByFullPath {
   '/demos/': typeof DemosIndexRoute
   '/help/': typeof HelpIndexRoute
   '/partners/': typeof PartnersIndexRoute
-  '/demos/$slug/$appSlug': typeof DemosSlugAppSlugRoute
+  '/demos/$customer/$slug': typeof DemosCustomerSlugRoute
   '/help/knowledge/$topic': typeof HelpKnowledgeTopicRoute
-  '/demos/$slug/': typeof DemosSlugIndexRoute
+  '/demos/$customer/': typeof DemosCustomerIndexRoute
   '/help/knowledge/': typeof HelpKnowledgeIndexRoute
   '/help/knowledge/guide/$slug': typeof HelpKnowledgeGuideSlugRoute
 }
@@ -204,9 +204,9 @@ export interface FileRoutesByTo {
   '/demos': typeof DemosIndexRoute
   '/help': typeof HelpIndexRoute
   '/partners': typeof PartnersIndexRoute
-  '/demos/$slug/$appSlug': typeof DemosSlugAppSlugRoute
+  '/demos/$customer/$slug': typeof DemosCustomerSlugRoute
   '/help/knowledge/$topic': typeof HelpKnowledgeTopicRoute
-  '/demos/$slug': typeof DemosSlugIndexRoute
+  '/demos/$customer': typeof DemosCustomerIndexRoute
   '/help/knowledge': typeof HelpKnowledgeIndexRoute
   '/help/knowledge/guide/$slug': typeof HelpKnowledgeGuideSlugRoute
 }
@@ -231,9 +231,9 @@ export interface FileRoutesById {
   '/demos/': typeof DemosIndexRoute
   '/help/': typeof HelpIndexRoute
   '/partners/': typeof PartnersIndexRoute
-  '/demos/$slug/$appSlug': typeof DemosSlugAppSlugRoute
+  '/demos/$customer/$slug': typeof DemosCustomerSlugRoute
   '/help/knowledge/$topic': typeof HelpKnowledgeTopicRoute
-  '/demos/$slug/': typeof DemosSlugIndexRoute
+  '/demos/$customer/': typeof DemosCustomerIndexRoute
   '/help/knowledge/': typeof HelpKnowledgeIndexRoute
   '/help/knowledge/guide/$slug': typeof HelpKnowledgeGuideSlugRoute
 }
@@ -259,9 +259,9 @@ export interface FileRouteTypes {
     | '/demos/'
     | '/help/'
     | '/partners/'
-    | '/demos/$slug/$appSlug'
+    | '/demos/$customer/$slug'
     | '/help/knowledge/$topic'
-    | '/demos/$slug/'
+    | '/demos/$customer/'
     | '/help/knowledge/'
     | '/help/knowledge/guide/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -285,9 +285,9 @@ export interface FileRouteTypes {
     | '/demos'
     | '/help'
     | '/partners'
-    | '/demos/$slug/$appSlug'
+    | '/demos/$customer/$slug'
     | '/help/knowledge/$topic'
-    | '/demos/$slug'
+    | '/demos/$customer'
     | '/help/knowledge'
     | '/help/knowledge/guide/$slug'
   id:
@@ -311,9 +311,9 @@ export interface FileRouteTypes {
     | '/demos/'
     | '/help/'
     | '/partners/'
-    | '/demos/$slug/$appSlug'
+    | '/demos/$customer/$slug'
     | '/help/knowledge/$topic'
-    | '/demos/$slug/'
+    | '/demos/$customer/'
     | '/help/knowledge/'
     | '/help/knowledge/guide/$slug'
   fileRoutesById: FileRoutesById
@@ -338,9 +338,9 @@ export interface RootRouteChildren {
   DemosIndexRoute: typeof DemosIndexRoute
   HelpIndexRoute: typeof HelpIndexRoute
   PartnersIndexRoute: typeof PartnersIndexRoute
-  DemosSlugAppSlugRoute: typeof DemosSlugAppSlugRoute
+  DemosCustomerSlugRoute: typeof DemosCustomerSlugRoute
   HelpKnowledgeTopicRoute: typeof HelpKnowledgeTopicRoute
-  DemosSlugIndexRoute: typeof DemosSlugIndexRoute
+  DemosCustomerIndexRoute: typeof DemosCustomerIndexRoute
   HelpKnowledgeIndexRoute: typeof HelpKnowledgeIndexRoute
   HelpKnowledgeGuideSlugRoute: typeof HelpKnowledgeGuideSlugRoute
 }
@@ -487,11 +487,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HelpKnowledgeIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demos/$slug/': {
-      id: '/demos/$slug/'
-      path: '/demos/$slug'
-      fullPath: '/demos/$slug/'
-      preLoaderRoute: typeof DemosSlugIndexRouteImport
+    '/demos/$customer/': {
+      id: '/demos/$customer/'
+      path: '/demos/$customer'
+      fullPath: '/demos/$customer/'
+      preLoaderRoute: typeof DemosCustomerIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/help/knowledge/$topic': {
@@ -501,11 +501,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HelpKnowledgeTopicRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/demos/$slug/$appSlug': {
-      id: '/demos/$slug/$appSlug'
-      path: '/demos/$slug/$appSlug'
-      fullPath: '/demos/$slug/$appSlug'
-      preLoaderRoute: typeof DemosSlugAppSlugRouteImport
+    '/demos/$customer/$slug': {
+      id: '/demos/$customer/$slug'
+      path: '/demos/$customer/$slug'
+      fullPath: '/demos/$customer/$slug'
+      preLoaderRoute: typeof DemosCustomerSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/help/knowledge/guide/$slug': {
@@ -538,9 +538,9 @@ const rootRouteChildren: RootRouteChildren = {
   DemosIndexRoute: DemosIndexRoute,
   HelpIndexRoute: HelpIndexRoute,
   PartnersIndexRoute: PartnersIndexRoute,
-  DemosSlugAppSlugRoute: DemosSlugAppSlugRoute,
+  DemosCustomerSlugRoute: DemosCustomerSlugRoute,
   HelpKnowledgeTopicRoute: HelpKnowledgeTopicRoute,
-  DemosSlugIndexRoute: DemosSlugIndexRoute,
+  DemosCustomerIndexRoute: DemosCustomerIndexRoute,
   HelpKnowledgeIndexRoute: HelpKnowledgeIndexRoute,
   HelpKnowledgeGuideSlugRoute: HelpKnowledgeGuideSlugRoute,
 }

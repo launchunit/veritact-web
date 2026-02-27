@@ -1,14 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute('/demos/$slug/')({
+export const Route = createFileRoute('/demos/$customer/')({
   component: Page,
 });
 
 function Page() {
-  const { slug } = Route.useParams();
+  const { customer } = Route.useParams();
   return (
     <div>
-      <h1>Demo: {slug}</h1>
+      <h1>Demo: {customer}</h1>
     </div>
   );
 }

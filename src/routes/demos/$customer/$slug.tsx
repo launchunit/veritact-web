@@ -1,15 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router';
 
-export const Route = createFileRoute('/demos/$slug/$appSlug')({
+export const Route = createFileRoute('/demos/$customer/$slug')({
   component: Page,
 });
 
 function Page() {
-  const { slug, appSlug } = Route.useParams();
+  const { customer, slug } = Route.useParams();
   return (
     <div>
       <h1>
-        {slug} / {appSlug}
+        {customer} / {slug}
       </h1>
     </div>
   );

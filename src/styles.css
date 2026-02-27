@@ -47,11 +47,9 @@
   } */
   html {
     color-scheme: light;
-    background-color: var(--color-background);
-    scroll-behavior: smooth;
-    -webkit-tap-highlight-color: transparent;
+    @apply scroll-smooth bg-background font-sans antialiased text-foreground;
   }
   body {
-    @apply bg-background text-foreground min-h-full font-sans antialiased;
+    @apply min-h-screen w-full mx-auto;
   }
 }
