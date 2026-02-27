@@ -9,9 +9,13 @@ import { validateConfig } from '@scoretravel/vite-validate-config';
 
 // https://vite.dev/config
 export default defineConfig({
-  server: { host: true },
-  envDir: false, // Do not load ".env" files
+  server: {
+    host: true,
+    // See "@scoretravel/infra/docker-compose/compose.yaml"
+    allowedHosts: ['tunnel.launchunit.com', '.trycloudflare.com'],
+  },
   optimizeDeps: { include: ['@tabler/icons-react'] },
+  envDir: false, // Do not load ".env" files
   plugins: [
     // Note: validateConfig also loads dotenv file via vite
     validateConfig({ file: './src/config/config.server.ts' }),

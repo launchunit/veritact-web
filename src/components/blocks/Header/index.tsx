@@ -11,6 +11,26 @@ const solutions = [
   { to: '/solutions/home-installation', label: 'Home Installation' },
   { to: '/solutions/fleet-maintenance', label: 'Fleet Maintenance' },
   { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
+  { to: '/solutions/claims-integrity', label: 'Claims Integrity' },
 ] as const;
 
 /**
@@ -109,19 +129,15 @@ function MobileNav() {
         render={<Drawer.Trigger />}>
         <HamburgerIcon open={open} />
       </Button>
-      <Drawer.Portal>
+      <BaseDrawer.Portal>
         <Drawer.Backdrop />
         <BaseDrawer.Viewport className="group fixed inset-0 z-50">
-          <ScrollArea.Root
-            style={{ position: undefined }}
-            className="box-border h-full overscroll-contain transition-[transform,translate] duration-[600ms] ease-[cubic-bezier(0.45,1.005,0,1.005)] group-data-[ending-style]:pointer-events-none group-data-[starting-style]:translate-y-[100dvh]">
-            <ScrollArea.Viewport className="box-border h-full touch-auto overscroll-contain">
+          <ScrollArea.Root className="box-border h-full overscroll-contain group-data-ending-style:pointer-events-none group-data-starting-style:translate-y-[100dvh]">
+            <ScrollArea.Viewport className="box-border h-full touch-auto overscroll-contain pb-4">
               <ScrollArea.Content className="flex min-h-full items-end justify-center pt-8">
-                <BaseDrawer.Popup className="group box-border w-full max-w-2xl [transform:translateY(var(--drawer-swipe-movement-y))] transition-transform duration-[600ms] ease-[cubic-bezier(0.45,1.005,0,1.005)] outline-none data-[ending-style]:[transform:translateY(max(100dvh,100%))] data-[ending-style]:duration-[350ms] data-[ending-style]:ease-[cubic-bezier(0.375,0.015,0.545,0.455)] data-[swiping]:select-none">
-                  <nav
-                    aria-label="Mobile"
-                    className="bg-background text-foreground outline-border relative flex flex-col rounded-t-2xl px-6 pt-4 pb-[calc(1.5rem+env(safe-area-inset-bottom))] shadow-[0_10px_64px_-10px_rgb(36_40_52/20%)] outline outline-1 transition-shadow duration-[350ms] ease-[cubic-bezier(0.375,0.015,0.545,0.455)] group-data-[ending-style]:shadow-[0_10px_64px_-10px_rgb(36_40_52/0%)]">
-                    <div className="mb-3 grid grid-cols-[1fr_auto_1fr] items-center">
+                <BaseDrawer.Popup className="pointer-events-none flex w-full max-w-2xl transform-[translateY(var(--drawer-swipe-movement-y))] flex-col gap-3 px-4 pb-[calc(1rem+env(safe-area-inset-bottom,0px))] transition-transform duration-450 ease-[cubic-bezier(0.32,0.72,0,1)] outline-none data-ending-style:transform-[translateY(calc(100%+1rem))] data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] data-starting-style:transform-[translateY(calc(100%+1rem))] data-swiping:select-none">
+                  <nav aria-label="Mobile" className="bg-background pointer-events-auto rounded-xl">
+                    <div className="mb-3 grid grid-cols-[1fr_auto_1fr] items-center px-6 pt-6">
                       <div aria-hidden className="size-10" />
                       <div className="bg-muted-foreground/30 h-1 w-12 justify-self-center rounded-full" />
                       <Button
@@ -129,13 +145,13 @@ function MobileNav() {
                         size="icon"
                         aria-label="Close menu"
                         className="justify-self-end rounded-full"
-                        render={<Drawer.CloseBase />}>
+                        render={<BaseDrawer.Close />}>
                         <HamburgerIcon open={open} />
                       </Button>
                     </div>
 
-                    <Drawer.Content className="w-full">
-                      <div className="flex flex-col gap-1">
+                    <BaseDrawer.Content>
+                      <div className="flex flex-col gap-1 px-6">
                         {solutions.map((s) => (
                           <Link
                             key={s.to}
@@ -147,22 +163,22 @@ function MobileNav() {
                         ))}
                       </div>
 
-                      <div className="py-8">
-                        <ButtonLink to="/contact/sales" onClick={() => setOpen(false)} className="w-full">
+                      <div className="p-6">
+                        <ButtonLink
+                          to="/contact/sales"
+                          onClick={() => setOpen(false)}
+                          className="w-full">
                           Book a Demo
                         </ButtonLink>
                       </div>
-                    </Drawer.Content>
+                    </BaseDrawer.Content>
                   </nav>
                 </BaseDrawer.Popup>
               </ScrollArea.Content>
             </ScrollArea.Viewport>
-            <ScrollArea.Scrollbar className="pointer-events-none absolute m-[0.4rem] flex w-[0.25rem] justify-center rounded-[1rem] opacity-0 transition-opacity duration-[250ms] hover:pointer-events-auto hover:opacity-100 hover:delay-0 hover:duration-[75ms] data-[ending-style]:opacity-0 data-[ending-style]:duration-[250ms] data-[scrolling]:pointer-events-auto data-[scrolling]:opacity-100 data-[scrolling]:delay-0 data-[scrolling]:duration-[75ms] md:w-[0.4375rem]">
-              <ScrollArea.Thumb className="bg-muted-foreground/50 w-full rounded-[inherit] before:absolute before:top-1/2 before:left-1/2 before:h-[calc(100%+1rem)] before:w-[calc(100%+1rem)] before:-translate-x-1/2 before:-translate-y-1/2 before:content-['']" />
-            </ScrollArea.Scrollbar>
           </ScrollArea.Root>
         </BaseDrawer.Viewport>
-      </Drawer.Portal>
+      </BaseDrawer.Portal>
     </Drawer.Root>
   );
 }
