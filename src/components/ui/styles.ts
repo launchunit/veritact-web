@@ -2,10 +2,10 @@ import { tv } from 'tailwind-variants';
 import type { ComponentProps, ElementType } from 'react';
 
 /**
- * Extracts a component's props and narrows "className" to "string".
+ * Extracts a component's props and narrows "className" to "string"
  * Many headless libraries (Base UI, Radix, etc.) type className as a
  * callback union — this ensures our wrappers only accept plain strings
- * since we resolve classes at definition time via "tv()".
+ * since we resolve classes at definition time via "tv()"
  */
 export type UIProps<T extends ElementType> = Omit<ComponentProps<T>, 'className'> & {
   className?: string;

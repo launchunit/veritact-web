@@ -1,5 +1,6 @@
 import { DrawerPreview as BaseDrawer } from '@base-ui/react/drawer';
 import { ScrollArea } from '@base-ui/react/scroll-area';
+import { Separator } from '@base-ui/react/separator';
 import { useState } from 'react';
 import { cn } from 'tailwind-variants';
 import { Button, ButtonLink } from '@/ui/Button';
@@ -35,7 +36,7 @@ export default function Header() {
               {s.label}
             </Link>
           ))}
-          <div className="bg-border mr-4 ml-3 h-4 w-px shrink-0" />
+          <Separator orientation="vertical" className="bg-border mr-4 ml-3 h-4 w-px shrink-0" />
           <ButtonLink to="/contact/sales" size="sm">
             Book a Demo
           </ButtonLink>

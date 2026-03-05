@@ -31,16 +31,16 @@ function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-2">
           {/* Left — headline */}
           <div className="flex flex-col gap-6">
-            <div className="border-primary/30 bg-primary/10 text-primary inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wider uppercase">
+            <div className="border-accent/30 bg-accent/10 text-accent inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wider uppercase">
               <span className="relative flex size-2">
-                <span className="bg-primary absolute inline-flex size-full animate-ping rounded-full opacity-75" />
-                <span className="bg-primary relative inline-flex size-2 rounded-full" />
+                <span className="bg-accent absolute inline-flex size-full animate-ping rounded-full opacity-75" />
+                <span className="bg-accent relative inline-flex size-2 rounded-full" />
               </span>
               Frontier Physical Vision AI
             </div>
 
             <h1 className="text-foreground text-4xl leading-tight text-pretty sm:text-5xl lg:text-6xl">
-              Operational verification layer for <span className="text-primary">physical work</span>
+              Operational verification layer for <span className="text-accent">physical work</span>
             </h1>
 
             <p className="text-muted-foreground text-lg">
@@ -124,7 +124,7 @@ function StandardSection() {
         {/* Full-width heading */}
         <h2 className="text-foreground mb-10 text-center text-3xl leading-tight text-pretty sm:text-4xl">
           Converting decades of experience into a{' '}
-          <span className="text-primary">repeatable standard</span>
+          <span className="text-accent">repeatable standard</span>
         </h2>
 
         {/* Bento grid */}
@@ -138,7 +138,7 @@ function StandardSection() {
               </p>
               <div className="mb-6 flex flex-col gap-6">
                 <div className="flex gap-3">
-                  <div className="border-primary/30 bg-primary/10 text-primary mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold">
+                  <div className="border-accent/30 bg-accent/10 text-accent mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold">
                     1
                   </div>
                   <div>
@@ -152,7 +152,7 @@ function StandardSection() {
                   </div>
                 </div>
                 <div className="flex gap-3">
-                  <div className="border-primary/30 bg-primary/10 text-primary mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold">
+                  <div className="border-accent/30 bg-accent/10 text-accent mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold">
                     2
                   </div>
                   <div>
@@ -192,7 +192,7 @@ function StandardSection() {
                     <div className="absolute inset-0 flex flex-col justify-between p-6">
                       <div className="flex items-start justify-between">
                         <div className="border-border bg-background/90 flex items-center gap-3 rounded-lg border p-3 shadow-sm backdrop-blur">
-                          <div className="bg-primary h-8 w-1 shrink-0 rounded-full" />
+                          <div className="bg-accent h-8 w-1 shrink-0 rounded-full" />
                           <div>
                             <div className="text-muted-foreground text-[10px] tracking-widest uppercase">
                               Current Step
@@ -268,7 +268,7 @@ function StandardSection() {
               <div>
                 <p className="text-muted-foreground text-sm">Average Rework Cost</p>
                 <p className="text-foreground text-4xl font-black">
-                  $840 <span className="text-primary text-lg font-medium">per incident</span>
+                  $840 <span className="text-accent text-lg font-medium">per incident</span>
                 </p>
               </div>
 
@@ -382,7 +382,7 @@ function VerificationPipelineSection() {
                 </div>
                 <div className="flex-1">
                   <div className="bg-muted-foreground/40 h-1 w-full rounded-full">
-                    <div className="bg-primary relative h-1 rounded-full" style={{ width: '42%' }}>
+                    <div className="bg-accent relative h-1 rounded-full" style={{ width: '42%' }}>
                       <div className="bg-background absolute -top-0.5 right-0 size-2 rounded-full shadow" />
                     </div>
                   </div>
@@ -393,8 +393,8 @@ function VerificationPipelineSection() {
 
             {/* Timestamped AI analysis entries */}
             <div className="divide-border flex flex-1 flex-col gap-0 divide-y p-0">
-              <div className="bg-primary/5 border-primary/20 border-l-2 px-5 py-4">
-                <div className="text-primary mb-1 flex items-center gap-2 font-mono text-xs font-semibold">
+              <div className="bg-accent/5 border-accent/40 border-l-2 px-5 py-4">
+                <div className="text-accent mb-1 flex items-center gap-2 font-mono text-xs font-semibold">
                   <IconCircleCheckFilled className="size-3.5" aria-hidden="true" />
                   00:42.1 — 00:44.8
                 </div>
@@ -428,13 +428,13 @@ function VerificationPipelineSection() {
 
           {/* Right — heading */}
           <div className="flex flex-col gap-6">
-            <div className="border-primary/30 bg-primary/10 text-primary inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wider uppercase">
+            <div className="border-accent/30 bg-accent/10 text-accent inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wider uppercase">
               The Verification Pipeline
             </div>
 
             <h2 className="text-foreground text-3xl leading-tight text-pretty sm:text-4xl">
               Our Multimodal AI understands everything.{' '}
-              <span className="text-primary">Find anything.</span>
+              <span className="text-accent">Find anything.</span>
             </h2>
 
             <p className="text-muted-foreground text-lg">
@@ -452,11 +452,11 @@ function ComplianceSection() {
     <section className="bg-muted border-border border-b py-16 md:py-24">
       <div className="mx-auto max-w-6xl px-4">
         <div className="text-center">
-          <div className="border-primary/30 bg-primary/10 text-primary mx-auto mb-6 inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wider uppercase">
+          <div className="border-accent/30 bg-accent/10 text-accent mx-auto mb-6 inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-xs font-semibold tracking-wider uppercase">
             Compliance & Warranty
           </div>
           <h2 className="text-foreground text-3xl leading-tight text-pretty sm:text-4xl">
-            Instant documentation. <span className="text-primary">Audit-proof by default.</span>
+            Instant documentation. <span className="text-accent">Audit-proof by default.</span>
           </h2>
           <p className="text-muted-foreground mx-auto mt-4 max-w-2xl text-lg">
             Every action is automatically logged into tamper-proof compliance records for warranty
