@@ -103,7 +103,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "[html][css][javascript][typescript][tsx][typescriptreact]": {
+  "[html][css][javascript][typescript][tsx][typescriptreact][svg]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },

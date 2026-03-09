@@ -1,21 +1,32 @@
-import tailwindcss from '@tailwindcss/vite';
+import tailwindCSS from '@tailwindcss/vite';
 import { devtools } from '@tanstack/devtools-vite';
 import { tanstackStart } from '@tanstack/react-start/plugin/vite';
 import viteReact from '@vitejs/plugin-react';
+import { nitro } from 'nitro/vite';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
+import { validateConfig } from '@scoretravel/vite-validate-config';
 
-// https://vite.dev/config/
+// https://vite.dev/config
 export default defineConfig({
+  server: {
+    host: true,
+    // See "@scoretravel/infra/docker-compose/compose.yaml"
+    allowedHosts: ['tunnel.launchunit.com', '.trycloudflare.com'],
+  },
+  optimizeDeps: { include: ['@tabler/icons-react'] },
+  envDir: false, // Do not load ".env" files
   plugins: [
-    devtools(),
+    // Note: validateConfig also loads dotenv file via vite
+    validateConfig({ file: './src/config/config.server.ts' }),
     tsconfigPaths({ projects: ['./tsconfig.json'] }),
-    tailwindcss(),
+    devtools(),
+    nitro(),
     tanstackStart(),
+    tailwindCSS(),
     viteReact({
-      babel: {
-        plugins: ['babel-plugin-react-compiler'],
-      },
+      // https://react.dev/learn/react-compiler
+      babel: { plugins: ['babel-plugin-react-compiler'] },
     }),
   ],
 });

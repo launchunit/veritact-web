@@ -11,6 +11,10 @@
 **/dist/
 **/build/
 **/output/
+**/.output/
+**/out/
+**/storybook-static/
+**/.tanstack/
 **/tmp/
 **/node_modules/
 **/coverage/
@@ -48,5 +52,5 @@ pids
 **/wip-*/
 **/*.gen.ts
 
-# Claude (ignore this for now)
-.claude/
+# Generated Tanstack file
+!**/routeTree.gen.ts

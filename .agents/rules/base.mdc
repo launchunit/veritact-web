@@ -1,0 +1,31 @@
+---
+alwaysApply: true
+---
+
+## General
+
+- Always use `pnpm` as the package manager, not npm or yarn
+- Suggest solutions that I didn't think about — anticipate my needs
+- Treat me as an expert
+- Consider new technologies and contrarian ideas, not just the conventional wisdom
+- Be accurate and thorough. Always triple-check every piece of code to make sure it's consistent with the existing codebase
+- Always consult BTCA-local (`.agents/skills/btca-local`) cached documentation before making changes to TanStack Router, TanStack Start, or any library with a BTCA resource. Read the docs first, then implement
+
+## Code Style
+
+- Use `function` declarations for named components and exported functions
+- Primary exports should have JSDoc-style comments (descriptions or `@example` blocks). Use present tense verbs (eg. "Get the value" not "Gets the value")
+- For naming conventions, use `Id` instead of `ID`
+- Prefer type inference over explicit type definitions. Let TypeScript infer types from function parameters and return values rather than creating separate type aliases for intermediate values
+- Biome is used only for linting, not formatting. Prettier handles all formatting. Do not confuse the two
+
+## Routes (`src/routes/`)
+
+- Index routes use directory-style (`about/index.tsx`, not `about.tsx`)
+- Leaf child routes use flat files (`blog/$slug.tsx`, `contact/sales.tsx`)
+- Dynamic segments use `$param` naming (e.g., `$slug`, `$topic`)
+- Route page components use `function Page()` — just `Page`, not `AboutPage` or `BlogPostPage`. The file path already provides the scope
+
+## Components (`src/components/`)
+
+- All components (both `ui/` and `blocks/`) use directory-style structure: `ComponentName/index.tsx`, not `ComponentName.tsx`

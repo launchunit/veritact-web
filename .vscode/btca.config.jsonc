@@ -2,7 +2,7 @@
   "$schema": "https://btca.dev/btca.schema.json",
   "providerTimeoutMs": 300000,
   "provider": "openai-compat",
-  "model": "local/claude-sonnet-4-6",
+  "model": "local/claude-opus-4-6",
   "providerOptions": {
     "openai-compat": {
       "name": "anthropic",
@@ -24,6 +24,13 @@
       "url": "https://github.com/nodejs/node",
       "branch": "v22.x",
       "searchPaths": ["doc/api"]
+    },
+    {
+      "type": "git",
+      "name": "biome",
+      "url": "https://github.com/biomejs/website",
+      "branch": "main",
+      "searchPaths": ["src/content/docs"]
     },
     {
       "type": "git",
@@ -89,13 +96,6 @@
     },
     {
       "type": "git",
-      "name": "tailwind",
-      "url": "https://github.com/tailwindlabs/tailwindcss.com",
-      "branch": "main",
-      "searchPaths": ["src/docs"]
-    },
-    {
-      "type": "git",
       "name": "vite",
       "url": "https://github.com/vitejs/vite",
       "branch": "main",
@@ -138,6 +138,13 @@
     },
     {
       "type": "git",
+      "name": "tailwind",
+      "url": "https://github.com/tailwindlabs/tailwindcss.com",
+      "branch": "main",
+      "searchPaths": ["src/docs"]
+    },
+    {
+      "type": "git",
       "name": "react",
       "url": "https://github.com/reactjs/react.dev",
       "branch": "main",
@@ -145,16 +152,37 @@
     },
     {
       "type": "git",
-      "name": "tanstack-router",
+      "name": "base-ui",
+      "url": "https://github.com/mui/base-ui",
+      "branch": "master",
+      "searchPaths": ["docs"]
+    },
+    {
+      "type": "git",
+      "name": "tanstack",
       "url": "https://github.com/TanStack/router",
       "branch": "main",
       "searchPaths": ["docs"]
     },
     {
       "type": "git",
-      "name": "base-ui",
-      "url": "https://github.com/mui/base-ui",
-      "branch": "master",
+      "name": "tailwind-merge",
+      "url": "https://github.com/dcastil/tailwind-merge",
+      "branch": "main",
+      "searchPaths": ["docs"]
+    },
+    {
+      "type": "git",
+      "name": "tailwind-variants",
+      "url": "https://github.com/heroui-inc/tailwind-variants-docs",
+      "branch": "main",
+      "searchPaths": ["pages/docs"]
+    },
+    {
+      "type": "git",
+      "name": "storybook",
+      "url": "https://github.com/storybookjs/storybook",
+      "branch": "main",
       "searchPaths": ["docs"]
     }
   ]
